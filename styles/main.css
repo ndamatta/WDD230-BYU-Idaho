@@ -15,6 +15,9 @@ header{
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
 }
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+}
 img {
     width: 15%;
     border: 5px solid black;
