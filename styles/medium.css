@@ -1,0 +1,21 @@
+@media only screen and (min-width: 35em) {
+    h1 {
+        font-size: 3.5rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    main {
+        font-size: 2rem;
+    }
+    img {
+        width: 15%;
+        border: 4px solid black;
+    }
+    .copyright {
+        font-size: 1.5rem;
+    }
+    .lastmodified {
+        font-size: 1rem;
+    }
+}
