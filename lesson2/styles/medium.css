@@ -1,0 +1,23 @@
+@media only screen and (min-width: 768px) and (max-width: 968px){
+    header h1 {
+        font-size: 1.5rem;
+        color:red;
+    }
+    header h2 {
+        font-size: 1.3rem;
+    }
+    main {
+        font-size: 0.9rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row: ;
+        align-items: center;
+    }
+    main img {
+        height: 80%;
+        width: 60%;
+    }
+    footer {
+        font-size: 0.9rem;
+    }
+}
