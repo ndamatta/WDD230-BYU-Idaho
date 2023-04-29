@@ -1,5 +1,25 @@
 @media only screen and (max-width: 576px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+    header h2 {
+        font-size: 1rem;
+    }
     main {
+        font-size: 1rem;
+        display: grid;
         grid-template-columns: 1fr;
+    }
+   
+    .principle img {
+        width: 90%;
+    }
+    footer {
+        font-size: 0.8rem;
+    }
+    p {
+        height: 100%;
+        padding-right: 1rem;
+        padding: 10px;
     }
 }
