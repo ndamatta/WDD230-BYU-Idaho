@@ -1,29 +1,37 @@
 body {
     text-align: center;
     font-size: 16px;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+    margin: 0 auto;
+    width: auto;
     font-family: 'Montserrat', sans-serif;
+    max-width: 1024px;
+    justify-content: center;
 }
 header h1 {
     background-color: rgb(137, 178, 192);
     margin: 0;
     font-size: 1.2rem;
-    padding: 1rem;
+}
+header h2 {
+    background-color: rgb(137, 178, 192);
+    font-size: 1rem;
+    margin: 0;
+    padding-bottom: 1.5rem;
+
 }
 nav {
     background-color: lightblue;
-    text-align: center;
-    padding: 0;
-    margin: 0;
+    margin-bottom: 2rem;
 }
 nav ul {
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 nav li:hover {
     background-color: rgb(137, 178, 192);
@@ -33,12 +41,15 @@ nav a:hover {
 }
 nav li {
     flex: 1 1 100%;
-    padding: 0.5rem;
+    height: 100%;
 }
 nav a {
-    text-decoration: none;
     display: block;
-    color: black;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1rem;
+    padding: 1.5rem;
 }
 main {
     display: grid;
@@ -47,12 +58,90 @@ main {
 h2 {
     font-size: 1rem;
 }
-img {
-    width: 30%;
+main li {
+    margin: 1rem;
 }
 footer {
-    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(137, 178, 192);
     text-align: center;
     padding: 0;
-    margin: 0;
+    padding: 1rem 1rem;
+    margin-top: 1.5rem;
+}
+.copyright, .name, .lastmodified {
+    margin: 0.25rem;
+}
+.separator {
+    display: none;
+}
+/* HOME MAIN */
+.logo-title {
+    margin-top: 1rem;
+    grid-column: 1;
+    grid-row: 1;
+}
+.logo {
+    grid-column: 1;
+    grid-row: 2;
+}
+.logo img {
+    margin-top: 1.5rem;
+    max-height: 80%;
+}
+.purpose-title {
+    grid-column: 1;
+    grid-row: 3;
+}
+.purpose {
+    grid-column: 1;
+    grid-row: 4;
+    margin-left: 1rem;
+}
+
+/* TARGET AUDIENCE MAIN */
+.target-audience-title {
+    grid-column: 1;
+    grid-row: 1;
+}
+.target-audience {
+    grid-column: 1;
+    grid-row: 2;
+    margin-bottom: 1.5rem;
+}
+.personas-title {
+    grid-column: 1;
+    grid-row: 3;
+}
+.personas {
+    grid-column: 1;
+    grid-row: 4;
+}
+.scenarios-title {
+    grid-column: 1;
+    grid-row: 5;
+}
+.scenarios {
+    grid-column: 1;
+    grid-row: 6;
+}
+
+/* DESIGN MAIN */
+.color-title {
+    grid-column: 1;
+    grid-row: 1;
+}
+.color {
+    grid-column: 1;
+    grid-row: 2;
+}
+.typography-title {
+    grid-column: 2;
+    grid-row: 1;
+}
+.typography {
+    grid-column: 2;
+    grid-row: 2;
 }
