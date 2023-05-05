@@ -1,0 +1,58 @@
+body {
+    text-align: center;
+    font-size: 16px;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+}
+header h1 {
+    background-color: rgb(137, 178, 192);
+    margin: 0;
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+nav {
+    background-color: lightblue;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+nav ul {
+    display: flex;
+    flex-flow: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+nav li:hover {
+    background-color: rgb(137, 178, 192);
+}
+nav a:hover {
+    color: white;
+}
+nav li {
+    flex: 1 1 100%;
+    padding: 0.5rem;
+}
+nav a {
+    text-decoration: none;
+    display: block;
+    color: black;
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+h2 {
+    font-size: 1rem;
+}
+img {
+    width: 30%;
+}
+footer {
+    background-color: lightblue;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
