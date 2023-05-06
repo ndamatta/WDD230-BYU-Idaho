@@ -8,19 +8,20 @@ body {
     justify-content: center;
 }
 header h1 {
-    background-color: rgb(137, 178, 192);
+    background-color: #89B2C0;
     margin: 0;
     font-size: 1.2rem;
+    font-family: 'Signika Negative', sans-serif;
 }
 header h2 {
-    background-color: rgb(137, 178, 192);
+    background-color: #89B2C0;
     font-size: 1rem;
     margin: 0;
     padding-bottom: 1.5rem;
-
+    font-family: 'Signika Negative', sans-serif;
 }
 nav {
-    background-color: lightblue;
+    background-color: #ADD8E6;
     margin-bottom: 2rem;
 }
 nav ul {
@@ -34,22 +35,24 @@ nav ul {
     align-items: center;
 }
 nav li:hover {
-    background-color: rgb(137, 178, 192);
+    background-color: #89B2C0;
 }
 nav a:hover {
-    color: white;
+    color: #FFF;
 }
 nav li {
     flex: 1 1 100%;
     height: 100%;
+    width: 100%;
 }
 nav a {
     display: block;
-	color: black;
+	color: #000000;
 	text-align: center;
 	text-decoration: none;
 	font-size: 1rem;
     padding: 1.5rem;
+    font-family: 'Signika Negative', sans-serif;
 }
 main {
     display: grid;
@@ -60,17 +63,19 @@ h2 {
 }
 main li {
     margin: 1rem;
+    text-align: left;
 }
 footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(137, 178, 192);
+    background-color: #89B2C0;
     text-align: center;
     padding: 0;
     padding: 1rem 1rem;
     margin-top: 1.5rem;
 }
+
 .copyright, .name, .lastmodified {
     margin: 0.25rem;
 }
@@ -89,7 +94,8 @@ footer {
 }
 .logo img {
     margin-top: 1.5rem;
-    max-height: 80%;
+    max-width: 70%;
+    max-height: 70%;
 }
 .purpose-title {
     grid-column: 1;
@@ -99,6 +105,9 @@ footer {
     grid-column: 1;
     grid-row: 4;
     margin-left: 1rem;
+}
+.list-title {
+    text-decoration: underline;
 }
 
 /* TARGET AUDIENCE MAIN */
@@ -111,19 +120,19 @@ footer {
     grid-row: 2;
     margin-bottom: 1.5rem;
 }
-.personas-title {
+.scenarios-title {
     grid-column: 1;
     grid-row: 3;
 }
-.personas {
+.scenarios {
     grid-column: 1;
     grid-row: 4;
 }
-.scenarios-title {
+.personas-title {
     grid-column: 1;
     grid-row: 5;
 }
-.scenarios {
+.personas {
     grid-column: 1;
     grid-row: 6;
 }
@@ -138,10 +147,24 @@ footer {
     grid-row: 2;
 }
 .typography-title {
-    grid-column: 2;
-    grid-row: 1;
+    grid-column: 1;
+    grid-row: 3;
 }
 .typography {
-    grid-column: 2;
-    grid-row: 2;
+    grid-column: 1;
+    grid-row: 4;
+}
+#darkblue {
+    color: #89B2C0;
+}
+#lightblue {
+    color: #ADD8E6;
+}
+#white {
+    background-color: #000000;
+    color: #FFF;
+    padding: 0.2rem;
+}
+#font-signika {
+    font-family: 'Signika Negative', sans-serif;
 }
