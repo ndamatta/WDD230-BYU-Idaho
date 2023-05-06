@@ -156,9 +156,13 @@ footer {
 }
 #darkblue {
     color: #89B2C0;
+    background-color: #000000;
+    padding: 0.2rem;
 }
 #lightblue {
     color: #ADD8E6;
+    background-color: #000000;
+    padding: 0.2rem;
 }
 #white {
     background-color: #000000;
