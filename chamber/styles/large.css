@@ -50,6 +50,8 @@
     .hide-join, .hide-spotlight {
         display: block;
     }
+
+    /* FOOTER */
     .footer-section1 {
         font-size: 1.1rem;
     }
@@ -64,4 +66,9 @@
     .footer-section4 {
         font-size: .8rem;
     }
+    .footer-section3 .lastmodified {
+        display: inline-block;
+    }
+    .lastmodified2 {display: none;}
+    .footer-wdd230 .footer-separator {display: contents;}
 }

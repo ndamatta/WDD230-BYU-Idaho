@@ -151,9 +151,8 @@ footer {
     margin: 0 auto;
     width: 15%;
 }
-.hide-join, .hide-spotlight, .footer-section4 {
-    display: none;
-}
+.hide-join, .hide-spotlight, .footer-section4 {display: none;}
+.footer-wdd230 .footer-separator {display: none;}
 .copyright, .footer-name, .lastmodified, .footer-wdd230 {
     margin: .15rem;
 }
