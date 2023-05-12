@@ -65,17 +65,15 @@
     .hide-join {
         display: block;
     }
-    .separator {
-        display: contents;
-    }
 
     /* FOOTER */
     footer {
         grid-template-columns: repeat(4, 1fr);
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .footer-section1 img {
         margin: 0;
+        min-width: 10%;
     }
     .footer-section1 {
         grid-column: 1/4;
@@ -83,18 +81,22 @@
         display: inline-flex;
         text-align: left;
         align-items: center;
+        margin-left: 2rem;
     }
     .footer-section2 {
         grid-column: 4/5;
         grid-row: 1/2;
         align-items: center;
-        margin-top: 2.5rem;
+        margin-top: 2rem;
+        margin-right: 2rem;
+        font-size: .9rem;
     }
     .footer-section3 {
         grid-column: 1/5;
         grid-row: 2/3;
         display: inline-flex;
         justify-content: center;
+        font-size: .8rem;
     }
     .footer-section3 .lastmodified {
         display: none;
@@ -105,8 +107,6 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
+        font-size: .7rem;
     }
-
-
-
 }

@@ -48,7 +48,16 @@
     .hide-join, .hide-spotlight {
         display: block;
     }
-    .separator {
-        display: contents;
+    .footer-section1 {
+        font-size: 1.1rem;
+    }
+    .footer-section2 {
+        font-size: 1rem;
+    }
+    .footer-section3 {
+        font-size: .9rem;
+    }
+    .footer-section4 {
+        font-size: .8rem;
     }
 }

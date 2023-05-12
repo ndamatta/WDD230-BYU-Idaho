@@ -24,13 +24,13 @@ nav button {
     background-color: transparent;
     border: none;
     font-size: 2rem;
-    /* color: #555; */
+    color: black;
 }
 nav ul li a {
     display: block;
     padding: .8rem 2vw;
     text-decoration: none;
-    /* color: ; */
+    color: black;
     border-top: 1px solid rgba(0, 0, 0, .5);
 }
 nav ul li.active a {
@@ -44,9 +44,6 @@ nav ul.open {display: block;}
 
 #hamburgerBtn span:nth-child(1) {display: block;}
 #hamburgerBtn span:nth-child(2) {display: none;}
-
-#hamburgerBtn.open span:nth-child(1) {display: none;}
-#hamburgerBtn.open span:nth-child(2) {display: block;}
 
 header {
     display: grid;
@@ -88,7 +85,6 @@ header {
     min-width: 50%;
     max-width: 100%;
 }
-
 
 /* MAIN */
 main {
@@ -135,21 +131,20 @@ footer {
     margin-top: .2rem;
 }
 .footer-location {
-    margin: .7rem;
+    margin-top: .7rem;
+    text-decoration: none;
+}
+.footer-section2 {
+    margin-bottom: 1rem;
 }
 .footer-section3 {
     border-top: 1px solid black;
-}
-.footer-line {
-    border-top: .5px solid black;
-    border-bottom: .5px solid black;
-    width: 90%;
 }
 .home-footer-logo {
     margin: 0 auto;
     width: 15%;
 }
-.hide-join, .hide-spotlight, .separator, .footer-section4 {
+.hide-join, .hide-spotlight, .footer-section4 {
     display: none;
 }
 .copyright, .footer-name, .lastmodified, .footer-wdd230 {
