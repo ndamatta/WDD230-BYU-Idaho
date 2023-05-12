@@ -16,10 +16,13 @@
     nav ul li a {
         border: none;
     }
-    .home-header-h1 {
+    .header-logo img {
+        width: 100%;
+    }
+    .header-h1 {
         font-size: 2.2rem;
     }
-    .home-social-media {
+    .header-social-media {
         display: flex;
         justify-content: center;
         align-items: center;
