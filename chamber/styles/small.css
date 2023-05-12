@@ -154,4 +154,7 @@ footer {
 .copyright, .footer-name, .lastmodified, .footer-wdd230 {
     margin: .15rem;
 }
+.footer-name {
+    font-weight: bold;
+}
 
