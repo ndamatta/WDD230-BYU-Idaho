@@ -40,7 +40,6 @@
         grid-row: 1/5;
         display: flex;
         flex-direction: column;
-        min-width: 1;
     }
     .home-spotlight div {
         padding: 3rem;

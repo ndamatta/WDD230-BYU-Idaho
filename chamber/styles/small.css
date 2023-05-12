@@ -91,7 +91,7 @@ main {
     display: grid;
     grid-template-columns: 1fr;
 }
-main > section {
+main > div {
     background-color: #ADD8E6;
     margin: 1rem;
     padding: 7rem 7rem;
