@@ -1,6 +1,13 @@
 body {
     text-align: center;
 }
+/* FONTS */
+header {
+    font-family: 'Signika Negative', sans-serif;
+}
+main {
+    font-family: 'Montserrat', sans-serif;
+}
 /* HEADER*/
 nav {
     background-color: #ADD8E6;
@@ -107,22 +114,45 @@ main > section {
 
 /* FOOTER */
 footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
     background-color: #89B2C0;
     text-align: center;
-    padding: 1rem 1rem;
+    padding: .5rem .5rem;
     margin-top: 1.5rem;
+}
+.footer-title {
+    font-weight: bold;
+    margin: 0;
+}
+.footer-address {
+    margin-top: .2rem;
+    margin-bottom: .8rem;
+    font-style: italic;
+}
+.footer-email, .footer-phone-number {
+    margin-bottom: 0;
+    margin-top: .2rem;
+}
+.footer-location {
+    margin: .7rem;
+}
+.footer-section3 {
+    border-top: 1px solid black;
+}
+.footer-line {
+    border-top: .5px solid black;
+    border-bottom: .5px solid black;
+    width: 90%;
 }
 .home-footer-logo {
     margin: 0 auto;
     width: 15%;
 }
-.hide-join, .hide-spotlight, .separator {
+.hide-join, .hide-spotlight, .separator, .footer-section4 {
     display: none;
 }
-.copyright, .name, .lastmodified {
-    margin: 0.3rem;
+.copyright, .footer-name, .lastmodified, .footer-wdd230 {
+    margin: .15rem;
 }
 
