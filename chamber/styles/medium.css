@@ -1,0 +1,71 @@
+@media screen and (min-width: 35rem) {
+    body {
+        font-size: 1.3rem;
+    }
+    nav button {
+        display: none;
+    }
+    nav ul#primaryNav {
+        display: flex;
+        flex-direction: row;
+        border-left: 1px solid gray;
+        justify-content: center;
+        align-items: center;
+    }
+    nav ul li a {
+        border: none;
+    }
+    .home-header-h1 {
+        font-size: 2.2rem;
+    }
+    .home-social-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #todaysDate {
+        margin-bottom: 2rem;
+    }
+
+    /* GRID HOME MAIN */
+    main {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .home-hero {
+        grid-column: 1/5;
+        grid-row: 1;
+    }
+    .home-news-release {
+        grid-column: 1/5;
+        grid-row: 2;
+    }
+    .home-spotlight {
+        grid-column: 1/5;
+        grid-row: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-spotlight div {
+        padding: 3rem;
+    }
+    .home-join {
+        grid-column: 1/5;
+        grid-row: 4;
+    }
+    .home-event {
+        grid-column: 1/4;
+        grid-row: 6;
+    }
+    .home-weather {
+        grid-column: 4/5;
+        grid-row: 6;
+    }
+    .hide-join {
+        display: block;
+    }
+    .separator {
+        display: contents;
+    }
+
+}

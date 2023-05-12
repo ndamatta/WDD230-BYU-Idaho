@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Home Page of the website Funes Chamber of Commerce. Here you will find the hero and call to action, events, weather, news and release and spotlight.">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <title>[Home] Funes Chamber of Commerce</title>
+</head>
+<body>
+    <header>
+        <img class="home-header-logo" src="images/logo.png" alt="Funes Chamber of Commerce Logo">  <!--INSERT LOGO -->
+        <h1 class="home-header-h1">Funes Chamber of Commerce</h1>
+        <div class="home-social-media">
+            <a class="facebook-logo" href="https://www.facebook.com" target="_blank"><img src="images/facebook-logo.png" alt="Facebook Logo"></a>
+            <a class="instagram-logo" href="https://www.instagram.com" target="_blank"><img  src="images/instagram-logo.png" alt="instagram Logo"></a>
+        </div>
+        <p id="todaysDate"></p>
+        <nav>
+            <button id="hamburgerBtn"><span>&#9776;</span><span>X</span></button>
+            <ul id="primaryNav">
+                <li class="active"><a href="#">Discover</a></li>
+                <li><a href="#">Directory</a></li>
+                <li><a href="#">Join</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="home-hero">HERO</section>
+        <section class="home-event">EVENTS</section>
+        <section class="home-weather">WEATHER</section>
+        <section class="home-news-release">NEWS RELEASE</section>
+        <section class="home-join hide-join">JOIN</section>
+        <section class="home-spotlight">
+            <div>SPOTLIGHT 1</div>
+            <div>SPOTLIGHT 2</div>
+            <div class="hide-spotlight">SPOTLIGHT 3</div>
+        </section>
+    </main>
+    <footer>
+        <img class="home-footer-logo" src="images/logo.png" alt="Logo of Funes Chamber of Commerce">
+        <p class="copyright">&copy; <span id="currentyear"></span></p>
+        <p class="name"><span class="separator">|</span> Natanael da Matta <span class="separator">|</span></p>
+        <p class="lastmodified"> Last Modified:</p>
+    </footer>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
