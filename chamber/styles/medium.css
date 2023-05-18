@@ -46,16 +46,25 @@
     .home-spotlight {
         grid-column: 1/5;
         grid-row: 3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
-    .home-spotlight div {
-        padding: 3rem;
+    #spotlight1 {
+        grid-column: 1;
+        width: auto;
+    }
+    #spotlight2 {
+        width: auto;
+        grid-column: 2;
     }
     .home-join {
         grid-column: 1/5;
         grid-row: 4;
+    }
+    .join-link {
+        background-color: green;
+        text-decoration: none;
+        color: white;
     }
     .home-event {
         grid-column: 1/4;
