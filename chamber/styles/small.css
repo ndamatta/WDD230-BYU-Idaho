@@ -67,6 +67,7 @@ header {
     justify-content: center;
     align-items: center;
     border: 1px solid black;
+    box-shadow: 3px 3px 5px 1px #333;
     padding: 1rem;
 }
 .header-logo {
@@ -111,6 +112,8 @@ main > div {
     padding: .2rem;
     left: 1.5rem;
     top: .5rem;
+    font-size: 1rem;
+    box-shadow: 3px 3px 5px 1px #333;
 }
 .home-hero {
     position: relative;
@@ -124,6 +127,8 @@ main > div {
     padding: 1rem;
     text-decoration: none;
     border-radius: 15px;
+    box-shadow: 3px 3px 5px 1px #333;
+
 }
 .home-hero img {
     width: 100%;
@@ -135,7 +140,7 @@ main > div {
     grid-template-columns: 1fr;
     padding: .5rem;
 }
-.home-spotlight > div {
+.home-spotlight > section {
     padding-top: 1rem;
     padding-bottom: 1rem;
     margin: 1rem 1rem;
@@ -162,8 +167,7 @@ main > div {
 .home-weather {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 60%;
-    margin: 0 auto;
+    margin: 1rem auto;
 }
 #weather-title {
     grid-column: 1/3;

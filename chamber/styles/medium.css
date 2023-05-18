@@ -1,7 +1,7 @@
 @media screen and (min-width: 35rem) {
     /* HEADER */
     body {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
     nav button {
         display: none;
@@ -39,6 +39,12 @@
         grid-column: 1/5;
         grid-row: 1;
     }
+    .home-hero-h2 {
+        font-size: 1.3rem;
+    }
+    .home-hero-join {
+        font-size: 1.4rem;
+    }
     .home-news-release {
         grid-column: 1/5;
         grid-row: 2;
@@ -48,31 +54,51 @@
         grid-row: 3;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        font: 1rem;
     }
+    .home-spotlight-section1 {
+        font-size: .95rem;
+        margin: 1rem;
+        height: auto;
+    }
+    .home-spotlight-section1 p {
+        height: 100%;
+    }
+    .home-spotlight-section2 {font-size: .8rem;}
     #spotlight1 {
         grid-column: 1;
-        width: auto;
     }
     #spotlight2 {
-        width: auto;
         grid-column: 2;
+
     }
     .home-join {
         grid-column: 1/5;
         grid-row: 4;
+        padding: 2rem;
+    }
+    .home-join p {
+        margin-top: 3rem;
     }
     .join-link {
         background-color: green;
         text-decoration: none;
         color: white;
+        padding: 1rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        box-shadow: 3px 3px 5px 1px #333;
     }
     .home-event {
         grid-column: 1/4;
         grid-row: 6;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
     }
     .home-weather {
         grid-column: 4/5;
         grid-row: 6;
+        font-size: .9rem;
     }
     .hide-join {
         display: block;
