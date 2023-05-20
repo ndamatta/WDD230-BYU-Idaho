@@ -1,68 +1,110 @@
 @media screen and (min-width: 64rem) {
     body {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     .header-logo {
         min-width: 50%;
-        width: 80%;
+        width: 75%;
     }
     .header-logo img {
         width: 100%;
     }
     .header-h1 {
-        font-size: 3.5rem;
-        margin-bottom: 0;
+        font-size: 2.5rem;
     }
     #todaysDate {
         margin-top: 0;
     }
     
     /* GRID HOME MAIN */
-    body {
+    main {
         grid-template-columns: 1fr 3fr 1fr;
     }
+    /* EVENT */
     .home-event {
         grid-column: 1;
         grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+
+    /* WEATHER */
     .home-weather {
         grid-column: 1;
         grid-row: 2;
+        margin: 1rem 1rem;
     }
+
+    /* JOIN */
     .home-join {
         grid-column: 1;
         grid-row: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
+    .join-link {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .home-join p {
+        margin-top: 3rem;
+    }
+
+    /* HERO */
     .home-hero {
         grid-column: 2/4;
         grid-row: 1/3;
-        overflow: hidden;
     }
+
+    /* NEWS */
     .home-news-release {
         grid-column: 2/4;
         grid-row: 3;
     }
+
+    /* SPOTLIGHT */
     .home-spotlight {
-        grid-column: 4/5;
-        grid-row: 1/5;
-        display: flex;
-        flex-direction: column;
+        grid-column: 4;
+        grid-row: 1/4;
+        grid: grid;
+        grid-template-columns: 1fr;
     }
-    .home-spotlight div {
-        padding: 3rem;
+    #spotlight1 {
+        grid-column: 1;
+        grid-row: 1;
     }
+    #spotlight2 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    #spotlight3 {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .home-spotlight-section2 {font-size: .75rem;}
     .hide-join, .hide-spotlight {
         display: block;
     }
 
     /* FOOTER */
+    .home-footer-logo {
+        justify-content: right;
+        width: 50%;
+    }
+    .home-footer-logo img {
+        width: 100%;
+    }
     .footer-section1 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     .footer-section2 {
-        font-size: 1rem;
-        margin-top: 3rem;
-        margin-bottom: 1rem;
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
     }
     .footer-section3 {
         font-size: .9rem;
