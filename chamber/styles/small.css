@@ -134,6 +134,9 @@ main > div > h2, #spotlight1 h2, #spotlight2 h2, #spotlight3 h2 {
     padding: 1rem;
     text-decoration: none;
     border-radius: 15px;
+    color: black;
+    text-shadow: 1px 2px 8px white;
+
 }
 .home-hero-img-large {display: none;}
 .home-hero img {
