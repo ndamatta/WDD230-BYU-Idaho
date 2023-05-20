@@ -58,11 +58,16 @@
         grid-column: 2/4;
         grid-row: 1/3;
     }
-
     /* NEWS */
     .home-news-release {
         grid-column: 2/4;
         grid-row: 3;
+    }
+    .home-hero-img-smallmedium {
+        display: none;
+    }
+    .home-hero-img-large {
+        display: block;
     }
 
     /* SPOTLIGHT */
@@ -71,6 +76,12 @@
         grid-row: 1/4;
         grid: grid;
         grid-template-columns: 1fr;
+    }
+    .home-spotlight > section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     #spotlight1 {
         grid-column: 1;
