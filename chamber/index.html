@@ -16,11 +16,11 @@
 </head>
 <body>
     <header>
-        <div class="header-logo"><img src="images/logo.png" alt="Funes Chamber of Commerce Logo"></div>
+        <div class="header-logo"><img src="images/logo.webp" alt="Funes Chamber of Commerce Logo"></div>
         <h1 class="header-h1">Funes Chamber of Commerce</h1>
         <div class="header-social-media">
-            <a class="facebook-logo" href="https://www.facebook.com" target="_blank"><img src="images/facebook-logo.png" alt="Facebook Logo"></a>
-            <a class="instagram-logo" href="https://www.instagram.com" target="_blank"><img  src="images/instagram-logo.png" alt="instagram Logo"></a>
+            <a class="facebook-logo" href="https://www.facebook.com" target="_blank"><img src="images/facebook-logo.webp" alt="Facebook Logo"></a>
+            <a class="instagram-logo" href="https://www.instagram.com" target="_blank"><img  src="images/instagram-logo.webp" alt="instagram Logo"></a>
         </div>
         <p id="todaysDate"></p>
         <nav>
@@ -40,8 +40,13 @@
         
         <div class="home-hero">
             <h2 class="home-hero-h2">Welcome to Funes</h2>
-            <img class="home-hero-img-smallmedium" src="images/home-banner.png" alt="Picture of Funes">
-            <img class="home-hero-img-large" src="images/home-banner-large.png" alt="Picture of Funes">
+            <picture>
+                <source media="(max-width: 559px)" srcset="images/wdd230-small.webp">
+                <source media="(max-width: 1023px)" srcset="images/wdd230-medium.webp">
+                <img src="images/wdd230-large.webp" alt="Team meeting banner">
+            </picture>
+            <!-- <img class="home-hero-img-smallmedium" src="images/home-banner.png" alt="Picture of Funes">
+            <img class="home-hero-img-large" src="images/home-banner-large.png" alt="Picture of Funes"> -->
             <a class="home-hero-join" href="#">Join the Chamber</a>
         </div>
         <div class="home-event">
@@ -54,9 +59,9 @@
         </div>
         <div class="home-weather">
             <h2 id="weather-title">Weather</h2>
-            <img id="weather-picture" src="images/sunny-weather.png" alt="Weather image">
+            <img id="weather-picture" src="images/sunny-weather.webp" alt="Weather image">
             <div class="home-weather-section1">
-                <p>25°C</p>
+                <p><span id="temperature">9</span>°C</p>
                 <p>Sunny</p>
             </div>
             <div class="home-weather-section2">
@@ -64,8 +69,8 @@
                 <p>Wind Chill:</p>
             </div>
             <div class="home-weather-section3">
-                <p>2.5 km/h</p>
-                <p>N/A</p>
+                <p><span id="windSpeed">5</span> km/h</p>
+                <p><span id="windChill"></span></p>
             </div>
         </div>
         <div class="home-news-release">
@@ -80,7 +85,7 @@
             <section id="spotlight1"> <!-- SPOTLIGHT 1 -->
                 <h2>Best Soccer</h2>
                 <div class="home-spotlight-section1">
-                    <img src="images/best-soccer.png" alt="Best Soccer Logo">
+                    <img src="images/best-soccer.webp" alt="Best Soccer Logo">
                     <p>Let's play soccer!</p>
                 </div>
                 <div class="home-spotlight-section2">
@@ -91,7 +96,7 @@
             <section id="spotlight2"> <!-- SPOTLIGHT 2 -->
                 <h2>Fastest Taxi</h2>
                 <div class="home-spotlight-section1">
-                    <img src="images/fastest-taxi.png" alt="Fastest Taxi Logo">
+                    <img src="images/fastest-taxi.webp" alt="Fastest Taxi Logo">
                     <p>Being late? Never</p>
                 </div>
                 <div class="home-spotlight-section2">
@@ -102,7 +107,7 @@
             <section id="spotlight3" class="hide-spotlight"> <!-- SPOTLIGHT 3 -->
                 <h2>CoolWatches</h2>
                 <div class="home-spotlight-section1">
-                    <img src="images/cool-watches.png" alt="Fastest Taxi Logo">
+                    <img src="images/cool-watches.webp" alt="Fastest Taxi Logo">
                 <p>The best watches of the town!</p>
                 </div>
                 <div class="home-spotlight-section2">
@@ -115,7 +120,7 @@
     <footer>
         <div class="footer-section1">
             <div class="home-footer-logo">
-                <img src="images/logo.png" alt="Logo of Funes Chamber of Commerce">
+                <img src="images/logo.webp" alt="Logo of Funes Chamber of Commerce">
             </div>
             <section class="address-section">
                 <h3 class="footer-title">Funes Chamber of Commerce</h3>
@@ -138,5 +143,6 @@
         </div>
     </footer>
     <script src="scripts/main.js"></script>
+    <script src="scripts/windchill.js"></script>
 </body>
 </html>
