@@ -17,7 +17,7 @@ todayDateField.innerHTML = fulldate;
 /* Display banner if day is Monday or Wednesday, it's forcing to hide it instead */
 const meetingBanner = document.querySelector(".home-meeting-banner")
 
-if (date.getDay() === 1 || date.getDay() === 3) {
+if (date.getDay() === 1 || date.getDay() === 2) {
     meetingBanner.style.display = "block";
 }
 else {
