@@ -96,7 +96,7 @@
         margin-top: 3rem;
     }
     .join-link {
-        background-color: green;
+        background-color: #008000;
         text-decoration: none;
         color: white;
         padding: 1rem;
@@ -104,6 +104,10 @@
         padding-right: 5rem;
         box-shadow: 3px 3px 5px 1px #333;
     }
+    .join-link:hover {
+        background-color: rgba(56, 176, 0, .9);
+/*         background-color: rgba(0, 128, 0, .9);
+ */    }
     .hide-join {
         display: block;
     }

@@ -114,9 +114,9 @@ main > div > h2, #spotlight1 h2, #spotlight2 h2, #spotlight3 h2 {
 /* HOME - HERO */
 .home-hero-h2 {
     position: absolute;
-    background-color: rgba(137, 178, 192, .7);
-    border-radius: 12px;
-    padding: .2rem;
+    background-color: rgba(173, 216, 230, .7);
+    border-radius: 5px;
+    padding: .5rem;
     left: 1rem;
     top: 1.5rem;
     font-size: 1rem;
@@ -130,15 +130,16 @@ main > div > h2, #spotlight1 h2, #spotlight2 h2, #spotlight3 h2 {
     position: absolute;
     right: 1rem;
     bottom: 1.5rem;
-    background-color: #89B2C0;
+    background-color: #add8e6;
     padding: 1rem;
     text-decoration: none;
     border-radius: 12px;
     color: black;
     text-shadow: 1px 2px 8px white;
     box-shadow: 3px 3px 5px 1px #333;
-
-
+}
+.home-hero-join:hover {
+    background-color: rgba(137, 178, 192, .9);
 }
 .home-hero-img-large {display: none;}
 .home-hero img {
