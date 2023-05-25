@@ -70,6 +70,10 @@
         display: block;
     }
 
+    .home-hero-h2 {
+        font-size: 1.8rem;
+    }
+
     /* SPOTLIGHT */
     .home-spotlight {
         grid-column: 4;
