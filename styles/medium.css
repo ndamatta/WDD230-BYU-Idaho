@@ -1,16 +1,19 @@
-@media only screen and (min-width: 35em) {
+@media only screen and (min-width: 32em) {
     h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
     h2 {
-        font-size: 2.5rem;
-    }
-    main {
         font-size: 2rem;
     }
-    img {
-        width: 15%;
-        border: 4px solid black;
+    main {
+        font-size: 1.5rem;
+    }
+    header {
+        gap: 2rem;
+    }
+    .profile-pic {
+        width: 20%;
+        max-width: 25%;
     }
     .copyright {
         font-size: 1.5rem;
