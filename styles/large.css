@@ -1,0 +1,9 @@
+@media only screen and (min-width: 64rem) {
+    header {
+        gap: 3rem;
+    }
+    .profile-pic {
+        width: 15%;
+        max-width: 25%;
+    }
+}
