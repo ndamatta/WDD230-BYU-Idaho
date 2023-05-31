@@ -1,0 +1,17 @@
+main div {
+    display: flex;
+    flex-direction: column;
+}
+main {
+    margin: auto 20rem auto 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main img {
+    margin: .5rem;
+    filter: blur(0em);
+    transition: filter .5s;
+}
+main img[data-src] {filter: blur(.2rem);}
