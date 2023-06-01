@@ -308,5 +308,7 @@ footer {
 }
 .image-gallery {
     grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
