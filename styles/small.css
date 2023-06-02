@@ -46,12 +46,16 @@ main{
     margin: 20px;
 }
 .links{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
     color:black;
 }
 nav ul li {
     list-style-type: none;
-    margin: 20px;
+    margin: 2.5rem;
 }
 footer{
     display: flex;
