@@ -311,4 +311,15 @@ footer {
     display: grid;
     grid-template-columns: 1fr;
 }
+.image-gallery img {
+    border: 1px solid black;
+    margin: .5rem;
+    box-shadow: 1px 1px 3px 1px #333;
+}
+/* .discover-main > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
 
