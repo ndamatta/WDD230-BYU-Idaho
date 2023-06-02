@@ -329,3 +329,7 @@ footer {
     margin: .5rem;
     box-shadow: 1px 1px 3px 1px #333;
 }
+.image-gallery picture p {
+    margin-top: 0;
+    font-size: .8rem;
+}
