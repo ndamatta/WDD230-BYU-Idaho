@@ -303,9 +303,22 @@ footer {
 }
 
 /* DISCOVER PAGE */
-.discover-main {
-    grid-template-columns: 1fr;
+.discover-main {grid-template-columns: 1fr;}
+.lastVisit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .25rem auto;
+   grid-row: -2;
+    padding: 0;
+    width: 50%;
+    background-color: #008000;
+    color: white;
+};
+.lastVisitP {
+    color: red;
 }
+.discover-funes {grid-row: 1;}
 .image-gallery {
     grid-row: 2;
     display: grid;
@@ -316,10 +329,3 @@ footer {
     margin: .5rem;
     box-shadow: 1px 1px 3px 1px #333;
 }
-/* .discover-main > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
-

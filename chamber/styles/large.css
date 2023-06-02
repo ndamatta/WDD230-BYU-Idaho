@@ -138,6 +138,10 @@
     .discover-main {
         grid-template-columns: 2fr 1fr;
     }
+    .lastVisit {
+        grid-column: 1/3;
+        grid-row: -2;
+    }
     .discover-funes {
         grid-column: 1/3;
         grid-row: 1;
