@@ -76,3 +76,17 @@ else {
         loadImages(img);
     });
 }
+
+/* DISCOVER - LAST VISIT */
+let lastVisit = localStorage.getItem("lastVisit");
+
+if (lastVisit) {
+    let currentDate = new Date();
+    let previousDate = new Date(lastVisit);
+    let timeDifference = currentDate.getTime() - previousDate.getTime();
+
+    let differenceInDays = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+    document.querySelector(".lastVisit p").innerText = differenceInDays;
+}
+localStorage.setItem("lastVisit", new Date());
