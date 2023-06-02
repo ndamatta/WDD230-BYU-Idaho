@@ -309,15 +309,12 @@ footer {
     align-items: center;
     justify-content: center;
     margin: .25rem auto;
-   grid-row: -2;
+    grid-row: -2;
     padding: 0;
     width: 50%;
     background-color: #008000;
     color: white;
 };
-.lastVisitP {
-    color: red;
-}
 .discover-funes {grid-row: 1;}
 .image-gallery {
     grid-row: 2;
@@ -333,3 +330,11 @@ footer {
     margin-top: 0;
     font-size: .8rem;
 }
+.image-gallery img[data-src] {
+    filter: blur(0.1em);
+  }
+  
+  .image-gallery img {
+    filter: blur(0em);
+    transition: filter 0.5s;
+  }
