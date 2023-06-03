@@ -314,7 +314,7 @@ footer {
     width: 50%;
     background-color: #008000;
     color: white;
-};
+}
 .discover-funes {grid-row: 1;}
 .image-gallery {
     grid-row: 2;
@@ -326,7 +326,10 @@ footer {
     margin: .5rem;
     box-shadow: 1px 1px 3px 1px #333;
 }
-.image-gallery picture p {
+.image-gallery picture {
+    height: 100%;
+}
+.image-description {
     margin-top: 0;
     font-size: .8rem;
 }
