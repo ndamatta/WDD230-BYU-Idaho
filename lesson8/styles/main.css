@@ -5,7 +5,7 @@ body {
 body div {width: fit-content;}
 h1 {
     background-color: black;
-    padding: .5rem;
+    padding: 1.5rem 1rem 1.5rem 1rem;
     color: white;
     text-align: center;
     font-size: 1.2rem;
@@ -20,6 +20,11 @@ table {
     text-align: center;
     border-collapse: collapse;
     width: 100%;
+}
+caption {
+    caption-side: bottom;
+    margin: .2rem;
+    font-size: .9rem    ;
 }
 tr:nth-child(odd) {
     background-color: lightgray;
