@@ -1,0 +1,34 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+body div {width: fit-content;}
+h1 {
+    background-color: black;
+    padding: .5rem;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th {padding: .5rem;}
+table {
+    margin: 0;
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+}
+tr:nth-child(odd) {
+    background-color: lightgray;
+}
+tr:nth-child(1) {
+    background-color: gray;
+    color: white;
+}
+tr td:nth-child(1) {
+    padding: 1rem;
+}
+.blank {background-color: black;}
