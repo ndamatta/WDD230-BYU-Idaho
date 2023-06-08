@@ -341,3 +341,8 @@ footer {
     filter: blur(0em);
     transition: filter 0.5s;
   }
+/* JOIN PAGE */
+.join-main {
+    display: flex;
+    flex-direction: column;
+}
