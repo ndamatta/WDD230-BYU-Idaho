@@ -34,8 +34,31 @@
             </ul>
         </nav>
     </header>
-    <main class="discover-main">
+    <main class="join-main">
+        <h2>Join the Chamber of Commerce</h2>
+        <form method="get" action="thankyou.html">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label>First Name*<input type="text" name="fname" required></label>
+                <label>Last Name*<input type="text" name="lname" required></label>
+                <label>Email*<input type="email" name="email" placeholder="someone@example.com" required></label>
+                <label>Cellphone*<input type="tel" name="phone" required></label>
+                <label>Business Name*<input type="text" name="bussname" required></label>
+            </fieldset>
 
+            <fieldset>
+                <legend>Your Business and Membership</legend>
+                <label>Business Position<input type="text" name="position" pattern="[a-zA-Z\s\-]{7,}"></label>
+                <label><input type="radio" name="np-membership" value="np"> NP Membership</label>
+                <label><input type="radio" name="bronze-membership" value="bronze"> Bronze Membership</label>
+                <label><input type="radio" name="silver-membership" value="silver"> Silver Membership</label>
+                <label><input type="radio" name="gold-membership" value="gold"> Gold Membership</label>
+                <label><textarea name="description" cols="30" rows="5"></textarea></label>
+                <!-- ADD HIDDEN FIELD WITH DATE HERE -->
+
+            </fieldset>
+            <input type="submit" value="Join the Chamber" class="submitBtn">
+        </form>
     </main>
     <footer>
         <div class="footer-section1">
