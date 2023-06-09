@@ -35,6 +35,9 @@
         </nav>
     </header>
     <main class="join-main">
+        <div class="home-meeting-banner">
+            <h2>🤝🏼 Come join us for the chamber meet and greet Wednesday at 7:00 p.m</h2>
+        </div>
         <h2>Join Funes Chamber of Commerce</h2>
         <form method="get" action="thankyou.html">
             <fieldset>
@@ -42,32 +45,28 @@
                 <label class="top">First Name*<input type="text" name="fname" required></label>
                 <label class="top">Last Name*<input type="text" name="lname" required></label>
                 <label class="top">Email*<input type="email" name="email" placeholder="someone@example.com" required></label>
-                <label class="top">Cellphone*<input type="tel" name="phone" required></label>
+                <label class="top">Phone Number*<input type="tel" name="phone" required></label>
             </fieldset>
 
             <fieldset>
                 <legend>Membership and your business</legend>
-                <div>Select a Membership level</div>
-                <label class="sbs"><input type="radio" name="membership" value="np"> NP Membership</label>
-                <label class="sbs"><input type="radio" name="membership" value="bronze"> Bronze Membership</label>
-                <label class="sbs"><input type="radio" name="membership" value="silver"> Silver Membership</label>
-                <label class="sbs"><input type="radio" name="membership" value="gold"> Gold Membership</label>
+                <div class="membership">
+                    <h3>Select a Membership level</h3>
+                    <p>Click one to see info...</p> 
+                    <label class="sbs"><input type="radio" name="membership" value="np" onclick="showMembershipInfo('np')"> NP Membership</label>
+                    <label class="sbs"><input type="radio" name="membership" value="bronze" onclick="showMembershipInfo('bronze')"> Bronze Membership</label>
+                    <label class="sbs"><input type="radio" name="membership" value="silver" onclick="showMembershipInfo('silver')"> Silver Membership</label>
+                    <label class="sbs"><input type="radio" name="membership" value="gold" onclick="showMembershipInfo('gold')"> Gold Membership</label>
+                </div>
+                <div class="membership-info">
+                </div>
                 <label class="top">Business Name*<input type="text" name="bussname" required></label>
                 <label class="top">Business Position<input type="text" name="position" pattern="[a-zA-Z\s\-]{7,}"></label>
                 <label class="top">Briefly describe your business<textarea name="description" cols="30" rows="7"></textarea></label>
-                <!-- ADD HIDDEN FIELD WITH DATE HERE -->
+                <input type="hidden" id="hiddenDate">
             </fieldset>
             <input type="submit" value="Join the Chamber" class="submitBtn">
         </form>
-        <div class="membership-info">
-            <h2>Membership Information</h2>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
     </main>
     <footer>
         <div class="footer-section1">

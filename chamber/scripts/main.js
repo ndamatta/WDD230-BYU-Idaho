@@ -139,12 +139,16 @@ function showMembershipInfo(membership) {
         </ul>
         `
     }
-    
+
     membershipDiv.innerHTML = info;
 
     /* GET LOCAL DAY */
-    let currentDate = new Date().toDateString();
-    document.getElementById("hiddenDate").value = currentDate;
+    window.onload = function() {
+        let currentDate = new Date();
+        let hiddenDate = document.getElementById("hiddenDate");
+        hiddenDate.value = currentDate.toLocaleDateString();
+    }
+    
 }
 
 

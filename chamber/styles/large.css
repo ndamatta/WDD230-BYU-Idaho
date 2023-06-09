@@ -176,11 +176,18 @@
     }
 
     /* JOIN PAGE */
-    .join-main {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr
+    .membership {
+        display: inline-block;
     }
-    form {
-        grid-column: 1;
+    .membership-info {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 5.5rem;
+        padding-left: .1rem;
+        width: 47%;
+    }
+    .membership-info li {
+        padding: .1rem;
+        font-size: .9rem;
     }
 }
