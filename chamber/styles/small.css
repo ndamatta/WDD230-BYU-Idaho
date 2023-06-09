@@ -394,3 +394,9 @@ form input.submitBtn {
 form input.submitBtn:hover {
     background-color: rgba(137, 178, 192, .9);
 }
+form label.top input:required {
+    border-left: red solid 6px;
+}
+form label.top input:required:valid {
+    border-left: green solid 6px;
+}
