@@ -100,7 +100,7 @@ function showMembershipInfo(membership) {
         info = 
         `
         <ul>
-        <li>Price: <b>$0</b></li>
+        <li>Monthly price: <b>$0</b></li>
         <li>Access to resources for non-profits</li>
         <li>Listing in member directory for increased opportunities</li>
         </ul>
@@ -110,7 +110,7 @@ function showMembershipInfo(membership) {
         info = 
         `
         <ul>
-        <li>Price: <b>$100</b></li>
+        <li>Monthly price: <b>$100</b></li>
         <li>2 professional training sessions per month</li>
         <li>Workshops for professional development</li>
         </ul>
@@ -120,7 +120,7 @@ function showMembershipInfo(membership) {
         info = 
         `
         <ul>
-        <li>Price: <b>$250</b></li>
+        <li>Monthly price: <b>$250</b></li>
         <li>5 professional training sessions per month</li>
         <li>3 days of advertising in spotlight</li>
         <li>Up to 25% off in association events and conferences</li>
@@ -131,7 +131,7 @@ function showMembershipInfo(membership) {
         info = 
         `
         <ul>
-        <li>Price: <b>$400</b></li>
+        <li>Monthly price: <b>$400</b></li>
         <li>Unlimited professional training sessions per month</li>
         <li>7 days of advertising in spotlight</li>
         <li>Up to 50% off in association events and conferences</li>
@@ -139,9 +139,12 @@ function showMembershipInfo(membership) {
         </ul>
         `
     }
-
+    
     membershipDiv.innerHTML = info;
 
+    /* GET LOCAL DAY */
+    let currentDate = new Date().toDateString();
+    document.getElementById("hiddenDate").value = currentDate;
 }
 
 
