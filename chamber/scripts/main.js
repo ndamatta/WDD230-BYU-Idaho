@@ -90,3 +90,58 @@ if (lastVisit) {
     document.querySelector(".lastVisit p").innerText = `You visited this webpage ${differenceInDays} days ago!`;
 }
 localStorage.setItem("lastVisit", new Date());
+
+/* JOIN */
+function showMembershipInfo(membership) {
+    const membershipDiv = document.querySelector(".membership-info");
+    var info = "";
+
+    if (membership === "np") {
+        info = 
+        `
+        <ul>
+        <li>Price: <b>$0</b></li>
+        <li>Access to resources for non-profits</li>
+        <li>Listing in member directory for increased opportunities</li>
+        </ul>
+        `
+    }
+    else if (membership === "bronze") {
+        info = 
+        `
+        <ul>
+        <li>Price: <b>$100</b></li>
+        <li>2 professional training sessions per month</li>
+        <li>Workshops for professional development</li>
+        </ul>
+        `
+    }
+    else if (membership === "silver") {
+        info = 
+        `
+        <ul>
+        <li>Price: <b>$250</b></li>
+        <li>5 professional training sessions per month</li>
+        <li>3 days of advertising in spotlight</li>
+        <li>Up to 25% off in association events and conferences</li>
+        </ul>
+        `
+    }
+    else if (membership === "gold") {
+        info = 
+        `
+        <ul>
+        <li>Price: <b>$400</b></li>
+        <li>Unlimited professional training sessions per month</li>
+        <li>7 days of advertising in spotlight</li>
+        <li>Up to 50% off in association events and conferences</li>
+        <li>And many more...</li>
+        </ul>
+        `
+    }
+
+    membershipDiv.innerHTML = info;
+
+}
+
+
