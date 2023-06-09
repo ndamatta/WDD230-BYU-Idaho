@@ -343,6 +343,10 @@ footer {
   }
 /* JOIN PAGE */
 .join-main {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+form {
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -350,15 +354,15 @@ footer {
 }
 
 form fieldset {
-    margin: 2rem 0;
+    margin: 1rem 0;
     border: 1px solid black;
     border-radius: 4px;
     padding: 1rem;
-    max-width: 50rem;
+    width: 20rem
 }
 form legend {
-    margin: 0 1rem;
     padding: 0 .5rem;
+    margin: 0 1rem;
 }
 form label.top, form div {
     display: block;
@@ -372,7 +376,7 @@ form label.top input, form label.top textarea {
     border-radius: 3px;
     padding: .75rem;
     width: 100%;
-    max-width: 20rem;
+    max-width: 17rem;
     background-color: rgba(0, 0, 0, .05);
 }
 form label.sbs {
