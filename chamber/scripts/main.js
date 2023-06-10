@@ -141,14 +141,14 @@ function showMembershipInfo(membership) {
     }
 
     membershipDiv.innerHTML = info;
-
-    /* GET LOCAL DAY */
-    window.onload = function() {
-        let currentDate = new Date();
-        let hiddenDate = document.getElementById("hiddenDate");
-        hiddenDate.value = currentDate.toLocaleDateString();
-    }
-    
 }
+    /* GET LOCAL DAY */
+function getHiddenDate() {
+    let dateElement = document.querySelector("#hiddenDate");
+    dateElement.value = date.toLocaleDateString("en-US", lastModifiedOptions);
+    console.log(hiddenDate.value);
+}
+
+    
 
 
