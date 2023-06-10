@@ -38,6 +38,9 @@
         <div class="home-meeting-banner">
             <h2>🤝🏼 Come join us for the chamber meet and greet Wednesday at 7:00 p.m</h2>
         </div>
+        <div class="lastVisit">
+            <p class="lastVisitP"></p>
+        </div>
         <h2>Join Funes Chamber of Commerce</h2>
         <form method="get" action="thankyou.html">
             <fieldset>
@@ -65,7 +68,7 @@
                 <label class="top">Briefly describe your business<textarea name="description" cols="30" rows="7"></textarea></label>
                 <input type="hidden" id="hiddenDate">
             </fieldset>
-            <input type="submit" value="Join the Chamber" class="submitBtn">
+            <input type="submit" value="Join the Chamber" class="submitBtn" onclick="getHiddenDate()">
         </form>
     </main>
     <footer>
