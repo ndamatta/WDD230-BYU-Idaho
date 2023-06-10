@@ -407,3 +407,13 @@ form label.top input:required:valid {
 .membership-info ul {
     padding-left: 1rem;
 }
+/* THANK YOU PAGE */
+.thankyou-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.thankyou-main div {
+    margin: 7rem 2rem 7rem 2rem;
+}
