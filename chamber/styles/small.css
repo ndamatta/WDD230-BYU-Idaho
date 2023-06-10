@@ -346,6 +346,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr;
 }
+.join-main .lastVisit {display: none;}
 form {
     text-align: left;
     display: flex;
