@@ -221,4 +221,9 @@
     }
     .image-gallery picture {height: fit-content;}
     .image-gallery img:hover {box-shadow: 0 0 50px #333;}
+
+    /* JOIN US */
+    .join-main form fieldset {
+        width: 50%;
+    }
 }
