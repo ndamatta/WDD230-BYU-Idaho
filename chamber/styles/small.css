@@ -359,7 +359,8 @@ form fieldset {
     border: 1px solid black;
     border-radius: 4px;
     padding: 1rem;
-    width: 30rem
+    width: 50%;
+    min-width: 50%;
 }
 form legend {
     padding: 0 .5rem;
@@ -376,8 +377,9 @@ form label.top input, form label.top textarea {
     border: solid 1px black;
     border-radius: 3px;
     padding: .75rem;
-    width: 100%;
-    max-width: 17rem;
+    width: 50%;
+    min-width: 50%;
+    max-width: 50%;
     background-color: rgba(0, 0, 0, .05);
 }
 form label.sbs {
