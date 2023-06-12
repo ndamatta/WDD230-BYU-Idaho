@@ -353,7 +353,6 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    grid-row: 2;
 }
 
 form fieldset {
