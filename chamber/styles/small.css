@@ -304,6 +304,7 @@ footer {
 
 /* DISCOVER PAGE */
 .discover-main {grid-template-columns: 1fr;}
+/* .join-main .join-meeting-banner {display: none;} */
 .lastVisit {
     display: flex;
     align-items: center;
@@ -352,6 +353,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    grid-row: 2;
 }
 
 form fieldset {
