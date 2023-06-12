@@ -1,7 +1,9 @@
 main section {
-    background-color: lightskyblue;
+    background-color: lightcyan;
     margin: .5rem;
     padding: 1rem;
+    box-shadow: 1px 1px 5px 1px black;
+
 }
 body {
     text-align: center;
