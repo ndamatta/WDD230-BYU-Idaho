@@ -149,6 +149,7 @@ function getHiddenDate() {
     console.log(hiddenDate.value);
 }
 
+/* DIRECTORY PAGE */
     
 
 
