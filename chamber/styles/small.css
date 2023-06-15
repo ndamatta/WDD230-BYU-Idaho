@@ -422,14 +422,14 @@ form label.top input:required:valid {
 }
 
 /* DIRECTORY PAGE */
+.directory-main h2 {margin-top: 2.5rem; font-size: 1.5rem;}
+.directory-main button {padding: 1rem;}
+.directory-main div {margin-bottom: 2.5rem;}
 /* IF GRID */
 .directory-main .grid {
     display: grid;
 	grid-template-columns: 1fr;
     gap: 5rem;
-}
-.directory-main button {
-    padding: 1rem;
 }
 .grid > section {
     background-color: #ADD8E6;
@@ -464,4 +464,7 @@ form label.top input:required:valid {
 }
 .directory-main .list section:nth-child(even) {
     background-color: #ADD8E6;
+}
+.directory-main .list section:last-child {
+    margin-bottom: 3rem;
 }
