@@ -29,7 +29,7 @@
     }
 
     /* GRID HOME MAIN */
-    main {
+    .index-main {
         grid-template-columns: repeat(4, 1fr);
     }
     /* MEETING BANNER */
@@ -231,5 +231,10 @@
     .join-main .home-meeting-banner {
         grid-column: 1;
         grid-row: 1;
+    }
+
+    /* DIRECTORY PAGE */
+    .directory-main .grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
