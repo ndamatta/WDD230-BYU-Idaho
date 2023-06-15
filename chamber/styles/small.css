@@ -92,12 +92,12 @@ header {
 }
 
 /* MAIN */
-main {
+.index-main {
     display: grid;
     grid-template-columns: 1fr;
     font-family: 'Montserrat', sans-serif;
 }
-main > div {
+.index-main > div {
     background-color: #ADD8E6;
     margin: 1rem;
     padding: 1rem 1rem;
@@ -105,7 +105,7 @@ main > div {
     border: 1px solid black;
     box-shadow: 3px 3px 5px 1px #333;
 }
-main > div > h2, #spotlight1 h2, #spotlight2 h2, #spotlight3 h2 {
+.index-main > div > h2, #spotlight1 h2, #spotlight2 h2, #spotlight3 h2 {
     margin-top: .2rem;
     margin-bottom: .8rem;
     text-shadow: 1px 2px 8px white;
@@ -422,8 +422,14 @@ form label.top input:required:valid {
 }
 
 /* DIRECTORY PAGE */
+/* IF GRID */
 .directory-main .grid {
-    grid-template-columns: 1fr;
+    display: grid;
+	grid-template-columns: 1fr;
+    gap: 5rem;
+}
+.directory-main button {
+    padding: 1rem;
 }
 .grid > section {
     background-color: #ADD8E6;
@@ -432,6 +438,7 @@ form label.top input:required:valid {
     text-align: center;
     border: 1px solid black;
     box-shadow: 3px 3px 5px 1px #333;
+    min-width: 80%;
 }
 .grid section > .directory-phone {
     margin-top: 0;
@@ -439,4 +446,22 @@ form label.top input:required:valid {
 }
 .grid section > .directory-address {
     margin-bottom: .5rem;
+}
+/* IF LIST */
+.directory-main .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.list img {display: none;}
+.directory-main .list section {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    width: fit-content;
+}
+.directory-main .list section > * {
+	margin: 1rem 1rem;
+}
+.directory-main .list section:nth-child(even) {
+    background-color: #ADD8E6;
 }
