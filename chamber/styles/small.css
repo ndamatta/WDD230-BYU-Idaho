@@ -422,4 +422,21 @@ form label.top input:required:valid {
 }
 
 /* DIRECTORY PAGE */
-
+.directory-main .grid {
+    grid-template-columns: 1fr;
+}
+.grid > section {
+    background-color: #ADD8E6;
+    margin: 1rem;
+    padding: 2rem .5rem;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 3px 3px 5px 1px #333;
+}
+.grid section > .directory-phone {
+    margin-top: 0;
+    margin-bottom: 1.7rem;
+}
+.grid section > .directory-address {
+    margin-bottom: .5rem;
+}
