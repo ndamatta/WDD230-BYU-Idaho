@@ -18,7 +18,7 @@
     }
     
     /* GRID HOME MAIN */
-    main {
+    .index-main {
         grid-template-columns: 1fr 3fr 1fr;
     }
     /* EVENT */
@@ -189,5 +189,10 @@
     .membership-info li {
         padding: .1rem;
         font-size: .9rem;
+    }
+
+    /* DIRECTORY PAGE */
+    .directory-main .grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
