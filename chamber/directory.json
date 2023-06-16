@@ -1,0 +1,16 @@
+{
+    "business": [
+        {
+            "name":"Best Soccer",
+            "address":"Fake Address",
+            "phone":55555,
+            "url":"www.somewebsite.com"
+        },
+        {
+            "name":"Fastest Taxi",
+            "address":"Fake Address",
+            "phone":55555,
+            "url":"www.somewebsite.com"
+        }
+    ]
+}

@@ -166,5 +166,29 @@ function updateView(view) {
     display.classList.toggle("list", view === "list");
 }
 
+const url = "directory.json"
 
+async function getBusinessData() {
+    const response = await fetch(url);
+    const data = await response.json();
+    displayBusiness
+}
+
+const displayBusiness = (business) => {
+    const cards = document.querySelector(".directory-main article");
+
+    business.forEach((business) => {
+        let card = document.createElement("section");
+        let img = document.createElement("img");
+        let h2 = document.createElement("h2");
+        let address = document.createElement("p")
+        let phone = document.createElement("p")
+        let email = document.createElement("a");
+
+        h2.textContent = `${business.name}`;
+
+        card.appendChild(h2);
+    })
+}
+getBusinessData();
 
