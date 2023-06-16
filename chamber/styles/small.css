@@ -430,9 +430,9 @@ form label.top input:required:valid {
 }
 
 /* DIRECTORY PAGE */
-.directory-main h2 {margin-top: 2.5rem; font-size: 1.5rem;}
+.directory-main .title {margin-top: 2.5rem; font-size: 1.5rem;}
 .directory-main button {padding: 1rem;}
-.directory-main div {margin-bottom: 2.5rem;}
+.directory-main .menu {margin-bottom: 2.5rem;}
 /* IF GRID */
 .directory-main #lastVisit {display: none;}
 .directory-main .home-meeting-banner {display: none;}
@@ -467,14 +467,43 @@ form label.top input:required:valid {
 .directory-main .list section {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
-    width: fit-content;
+    width: 80%;
+    padding: 1rem;
+    border-radius: 3px;
+    
 }
-.directory-main .list section > * {
-	margin: 1rem 1rem;
-}
-.directory-main .list section:nth-child(even) {
+.directory-main .list section:nth-child(odd) {
     background-color: #ADD8E6;
 }
 .directory-main .list section:last-child {
     margin-bottom: 3rem;
 }
+.directory-main a, .directory-main .directory-phone, .directory-main .directory-address {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: .5rem;
+}
+.directory-main h2 {
+    font-size: 1.3rem;
+    margin-bottom: .2rem;
+}
+.directory-main section div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.directory-main section div h3 {
+    margin: 0 auto;
+    border-top: 1px solid black;
+    font-size: .6rem;
+    font-weight: normal;
+    background-color: black;
+    padding: .2rem;
+    border-radius: 7px;
+}
+.directory-main .np {color: green;}
+.directory-main .bronze {color: #CD7F32;}
+.directory-main .silver {color: #C0C0C0;}
+.directory-main .gold {color: #FFD700;}
