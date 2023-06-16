@@ -4,55 +4,64 @@
             "name":"Best Soccer",
             "address":"Rioja 150, Funes",
             "phone":"+549 341 548 652",
-            "url":"www.bestsoccer.com"
+            "url":"www.bestsoccer.com",
+            "membership":"bronze"
         },
         {
             "name":"Fastest Taxi",
             "address":"Santa Fe 190, Funes",
             "phone":"+549 341 525 456",
-            "url":"www.fastestaxi.com"
+            "url":"www.fastestaxi.com",
+            "membership":"silver"
         },
         {
             "name":"Cool Watches",
             "address":"Santa Fe 1450, Funes",
             "phone":"+549 341 456 132",
-            "url":"www.coolwatches.com"
+            "url":"www.coolwatches.com",
+            "membership":"gold"
         },
         {
             "name":"Tasty Biscuits",
             "address":"San Lorenzo 380, Funes",
             "phone":"+549 341 298 456",
-            "url":"www.tastybiscuits.com"
+            "url":"www.biscuits.com",
+            "membership":"gold"
         },
         {
             "name":"Laptop Ready!",
             "address":"24 Septiembre 980, Funes",
             "phone":"+549 341 980 899",
-            "url":"www.laptopready.com"
+            "url":"www.laptopready.com",
+            "membership":"silver"
         },
         {
             "name":"Fridge Repairs",
             "address":"San Jorge 1024, Funes",
             "phone":"+549 341 525 655",
-            "url":"www.fridgerepairs.com"
+            "url":"www.fsrepairs.com",
+            "membership":"bronze"
         },
         {
             "name":"Comfortable Chairs",
             "address":"Arijon 555, Funes",
             "phone":"+549 341 525 177",
-            "url":"www.comfortablechairs.com"
+            "url":"www.chairs.com",
+            "membership":"bronze"
         },
         {
             "name":"Juana Cakes",
             "address":"San Lorenzo 322, Funes",
             "phone":"+549 341 999 789",
-            "url":"www.juanacakes.com"
+            "url":"www.juanacakes.com",
+            "membership":"bronze"
         },
         {
             "name":"Pedro Puertas",
             "address":"Favaloro 422, Funes",
             "phone":"+549 341 525 416",
-            "url":"www.pedropuertas.com"
+            "url":"www.pedropuertas.com",
+            "membership":"gold"
         }
         
     ]
