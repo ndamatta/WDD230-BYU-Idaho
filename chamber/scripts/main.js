@@ -172,12 +172,19 @@ const urlBusiness = "https://ndamatta.github.io/wdd230/chamber/directory.json"
 async function getBusinessData() {
     const response = await fetch(urlBusiness);
     const data = await response.json();
-    displayBusiness(data.business)
+    const sortedBusiness = sortBusinessByMembership(data.business);
+    displayBusiness(sortedBusiness);
 }
-
 
 const membershipOrder = ["gold", "silver", "bronze", "np"];
 
+const sortBusinessByMembership = (business) => {
+    return business.sort((a, b) => {
+      const membershipA = membershipOrder.indexOf(a.membership);
+      const membershipB = membershipOrder.indexOf(b.membership);
+      return membershipA - membershipB;
+    });
+  };
 
 const displayBusiness = (business) => {
     const cards = document.querySelector(".directory-main article");

@@ -454,9 +454,7 @@ form label.top input:required:valid {
     margin-top: 0;
     margin-bottom: 1.7rem;
 }
-.grid section > .directory-address {
-    margin-bottom: .5rem;
-}
+.grid section > .directory-address {margin-bottom: .5rem;}
 /* IF LIST */
 .directory-main .list {
     display: flex;
@@ -470,14 +468,9 @@ form label.top input:required:valid {
     width: 80%;
     padding: 1rem;
     border-radius: 3px;
-    
 }
-.directory-main .list section:nth-child(odd) {
-    background-color: #ADD8E6;
-}
-.directory-main .list section:last-child {
-    margin-bottom: 3rem;
-}
+.directory-main .list section:nth-child(odd) {background-color: #ADD8E6;}
+.directory-main .list section:last-child {margin-bottom: 3rem;}
 .directory-main a, .directory-main .directory-phone, .directory-main .directory-address {
     display: flex;
     align-items: center;
@@ -496,14 +489,13 @@ form label.top input:required:valid {
 }
 .directory-main section div h3 {
     margin: 0 auto;
-    border-top: 1px solid black;
-    font-size: .6rem;
+    font-size: .7rem;
     font-weight: normal;
     background-color: black;
-    padding: .2rem;
+    padding: .2rem .5rem;
     border-radius: 7px;
 }
-.directory-main .np {color: green;}
+.directory-main .np {color: rgb(19, 209, 19);}
 .directory-main .bronze {color: #CD7F32;}
 .directory-main .silver {color: #C0C0C0;}
 .directory-main .gold {color: #FFD700;}
