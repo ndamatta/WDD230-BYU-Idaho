@@ -87,7 +87,7 @@ if (lastVisit) {
 
     let differenceInDays = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
-    document.querySelector(".lastVisit p").innerText = `You visited this webpage ${differenceInDays} days ago!`;
+    document.querySelector("#lastVisit p").innerText = `You visited this webpage ${differenceInDays} days ago!`;
 }
 localStorage.setItem("lastVisit", new Date());
 

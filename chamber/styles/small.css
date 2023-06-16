@@ -303,9 +303,9 @@ footer {
 }
 
 /* DISCOVER PAGE */
-.discover-main {grid-template-columns: 1fr;}
+.discover-main {grid-template-columns: 1fr}
 /* .join-main .join-meeting-banner {display: none;} */
-.lastVisit {
+#lastVisit {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -315,6 +315,14 @@ footer {
     width: 50%;
     background-color: #008000;
     color: white;
+}
+.discover-main > div {
+    background-color: #ADD8E6;
+    margin: 1rem;
+    padding: 1rem 1rem;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 3px 3px 5px 1px #333;
 }
 .discover-funes {grid-row: 1;}
 .image-gallery {
