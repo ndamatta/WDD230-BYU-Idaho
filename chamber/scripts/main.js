@@ -166,12 +166,12 @@ function updateView(view) {
     display.classList.toggle("list", view === "list");
 }
 
-const url = "directory.json"
+const urlBusiness = "https://ndamatta.github.io/wdd230/chamber/directory.json"
 
 async function getBusinessData() {
-    const response = await fetch(url);
+    const response = await fetch(urlBusiness);
     const data = await response.json();
-    displayBusiness
+    displayBusiness(data.business)
 }
 
 const displayBusiness = (business) => {
@@ -183,11 +183,19 @@ const displayBusiness = (business) => {
         let h2 = document.createElement("h2");
         let address = document.createElement("p")
         let phone = document.createElement("p")
-        let email = document.createElement("a");
+        let url = document.createElement("a");
 
         h2.textContent = `${business.name}`;
+        address.textContent = `${business.address}`;
+        phone.textContent = `${business.phone}`;
+        url.textContent = `${business.url}`;
 
         card.appendChild(h2);
+        card.appendChild(address);
+        card.appendChild(phone);
+        card.appendChild(url);
+
+        cards.appendChild(card);
     })
 }
 getBusinessData();
