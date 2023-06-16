@@ -150,6 +150,21 @@ function getHiddenDate() {
 }
 
 /* DIRECTORY PAGE */
-    
+const gridBtn = document.querySelector("#grid");
+const listBtn = document.querySelector("#list");
+const display = document.querySelector(".directory-main article");
+
+gridBtn.addEventListener("click", () => {
+    updateView("grid")
+});
+listBtn.addEventListener("click", () => {
+    updateView("list")
+});
+
+function updateView(view) {
+    display.classList.toggle("grid", view === "grid");
+    display.classList.toggle("list", view === "list");
+}
+
 
 

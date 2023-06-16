@@ -426,6 +426,8 @@ form label.top input:required:valid {
 .directory-main button {padding: 1rem;}
 .directory-main div {margin-bottom: 2.5rem;}
 /* IF GRID */
+.directory-main .lastVisit {display: none;}
+.directory-main .home-meeting-banner {display: none;}
 .directory-main .grid {
     display: grid;
 	grid-template-columns: 1fr;
