@@ -431,15 +431,16 @@ form label.top input:required:valid {
 
 /* DIRECTORY PAGE */
 .directory-main .title {margin-top: 2.5rem; font-size: 1.5rem;}
-.directory-main button {padding: 1rem;}
+.directory-main button {padding: .5rem; font-weight: bold;}
 .directory-main .menu {margin-bottom: 2.5rem;}
+.directory-main .directory-hide {display: none;}
 /* IF GRID */
 .directory-main #lastVisit {display: none;}
 .directory-main .home-meeting-banner {display: none;}
 .directory-main .grid {
     display: grid;
 	grid-template-columns: 1fr;
-    gap: 5rem;
+    gap: 1rem;
 }
 .grid > section {
     background-color: #ADD8E6;
@@ -447,6 +448,7 @@ form label.top input:required:valid {
     padding: 2rem .5rem;
     text-align: center;
     border: 1px solid black;
+    border-radius: 5px;
     box-shadow: 3px 3px 5px 1px #333;
     min-width: 80%;
 }
