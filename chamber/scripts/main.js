@@ -167,7 +167,7 @@ function updateView(view) {
     display.classList.toggle("list", view === "list");
 }
 /* CREATE CARDS FROM API */
-const urlBusiness = "https://ndamatta.github.io/wdd230/chamber/directory.json"
+const urlBusiness = "https://ndamatta.github.io/wdd230/chamber/data.json"
 
 async function getBusinessData() {
     const response = await fetch(urlBusiness);
