@@ -205,7 +205,8 @@ const displayBusiness = (business) => {
         phone.textContent = `${business.phone}`;
         url.textContent = `${business.url}`;
         
-        img.setAttribute("src", "https://placekitten.com/100/100");
+        img.setAttribute("src", `images/${business.img}`);
+        img.setAttribute("alt", `Logo of ${business.name}`)
         h3.setAttribute("class", setMembershipColor());
         address.setAttribute("class", "directory-address");
         phone.setAttribute("class", "directory-phone");
