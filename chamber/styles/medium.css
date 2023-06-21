@@ -33,7 +33,7 @@
         grid-template-columns: repeat(4, 1fr);
     }
     /* MEETING BANNER */
-    .home-meeting-banner {
+    #home-meeting-banner {
         grid-column: 1/5;
         grid-row: -3;
         font-size: .9rem;
@@ -227,14 +227,12 @@
         width: 50%;
     }
 
-    /* JOIN WEBPAGE */
-    .join-main .home-meeting-banner {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
     /* DIRECTORY PAGE */
     .directory-main .grid {
         grid-template-columns: 1fr 1fr;
     }
+    .directory-main .title {grid-row: 1;}
+    .directory-main .menu {grid-row: 2;}
+    .directory-main .list, .directory-main .grid {grid-row: 3;}
+
 }
