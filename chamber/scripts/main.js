@@ -280,7 +280,7 @@ if (temperature != null) { //Check if #temperature is in current .html, so it do
 
     try {
         weatherPicture.setAttribute('src', iconsrc);
-        weatherPicture.setAttribute('alt', desc);
+        weatherPicture.setAttribute('alt', `Logo for ${desc}`);
         weatherDesc.textContent = desc;
         windSpeed.innerHTML = `${windchill.mphToKmh(weatherData.wind.speed).toFixed(1)}` 
     } catch (error) {console.log(error)};
