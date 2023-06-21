@@ -85,17 +85,20 @@ else {
 
 /* DISCOVER - LAST VISIT */
 let lastVisit = localStorage.getItem("lastVisit");
+const lastVisitElement = document.querySelector("#lastVisit p");
 
-if (lastVisit) {
-    let currentDate = new Date();
-    let previousDate = new Date(lastVisit);
-    let timeDifference = currentDate.getTime() - previousDate.getTime();
-
-    let differenceInDays = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-
-    document.querySelector("#lastVisit p").innerText = `You visited this webpage ${differenceInDays} days ago!`;
+if (lastVisitElement != null) {
+    if (lastVisit) {
+        let currentDate = new Date();
+        let previousDate = new Date(lastVisit);
+        let timeDifference = currentDate.getTime() - previousDate.getTime();
+    
+        let differenceInDays = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    
+        lastVisitElement.innerText = `You visited this webpage ${differenceInDays} days ago!`;
+    }
+    localStorage.setItem("lastVisit", new Date());
 }
-localStorage.setItem("lastVisit", new Date());
 
 /* JOIN */
 function showMembershipInfo(membership) {
@@ -256,10 +259,9 @@ const weatherPicture = document.querySelector("#weather-picture");
 const windSpeed = document.querySelector("#windSpeed")
 const weatherDesc = document.querySelector("#weather-description");
 
-/*  const url = 'https://api.openweathermap.org/data/2.5/weather?q=Fairbanks&appid=cbb8d5e1cf97e51db015d685ee3d3340&units=imperial'; */
 const url = 'https://api.openweathermap.org/data/2.5/weather?q=Funes&appid=54da382318799586745f2112ab1d86ec&units=imperial'
-
-async function apiFetch() {
+if (temperature != null) { //Check if #temperature is in current .html, so it doesn't rise errors.
+    async function apiFetch() {
         const response = await fetch(url);
         if (response.ok) {
         const data = await response.json();
@@ -286,6 +288,8 @@ async function apiFetch() {
     }
 
     apiFetch();
+}
+
 
 
 

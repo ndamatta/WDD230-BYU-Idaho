@@ -304,6 +304,7 @@ footer {
 }
 
 /* DISCOVER PAGE */
+.discover-main{display: grid;}
 .discover-main {grid-template-columns: 1fr}
 #discover-meeting-banner {display: none;}
 #lastVisit {
