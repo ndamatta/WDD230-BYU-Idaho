@@ -1,11 +1,9 @@
+import * as windchill from "./windchill.js"
 /* F to C */
 function fahrenheitToCelsius(temperatureF) {
     return (temperatureF - 32) * 5 / 9;
 }
 /* mph to kmh */
-function mphToKmh(speedMph) {
-    return speedMph * 1.60934 
-}
 /* HAMBURGER BUTTON */
 function toggleMenu() {
     document.getElementById("primaryNav").classList.toggle("open");
@@ -24,15 +22,14 @@ todayDateField.innerHTML = fulldate;
 /* JOIN US BANNER */
 /* Display banner if day is Monday or Wednesday, it's forcing to hide it instead */
 const meetingBanner = document.querySelector("#home-meeting-banner")
-try {
+if (meetingBanner != null) {
     if (date.getDay() === 1 || date.getDay() === 2) {
-    meetingBanner.style.display = "block";
+        meetingBanner.style.display = "block";
+    }
+    else {
+        meetingBanner.style.display = "none";
+    }
 }
-else {
-    meetingBanner.style.display = "none";
-}
-} catch (error) {console.log(error)};
-
 /* FOOTER COPYRIGHT YEAR AND LAST MODIFIED */
 let lastModified = document.querySelector(".lastmodified")
 let lastModified2 = document.querySelector(".lastmodified2")
@@ -158,29 +155,29 @@ function getHiddenDate() {
     console.log(hiddenDate.value);
 }
 
-/* DIRECTORY PAGE */
 /* SHOW LIST OR GRID BUTTONS */
 
-    const gridBtn = document.querySelector("#grid");
-    const listBtn = document.querySelector("#list");
-    const display = document.querySelector(".directory-main article");
-    
-    if (gridBtn != null) {
-        gridBtn.addEventListener("click", () => {
-            updateView("grid")
-            });
-        listBtn.addEventListener("click", () => {
-            updateView("list")
-            });
-    } 
-    function updateView(view) {
-        display.classList.toggle("grid", view === "grid");
-        display.classList.toggle("list", view === "list");
-    }
-/* CREATE CARDS FROM API */
-try {
-    const urlBusiness = "https://ndamatta.github.io/wdd230/chamber/data.json"
+const gridBtn = document.querySelector("#grid");
+const listBtn = document.querySelector("#list");
+const display = document.querySelector(".directory-main article");
 
+if (gridBtn != null) {
+    gridBtn.addEventListener("click", () => {
+        updateView("grid")
+        });
+    listBtn.addEventListener("click", () => {
+        updateView("list")
+        });
+} 
+function updateView(view) {
+    display.classList.toggle("grid", view === "grid");
+    display.classList.toggle("list", view === "list");
+}
+/* CREATE CARDS FROM API */
+const urlBusiness = "https://ndamatta.github.io/wdd230/chamber/data.json"
+let check = document.querySelector(".directory-main article");
+
+if (check != null) {
     async function getBusinessData() {
         const response = await fetch(urlBusiness);
         const data = await response.json();
@@ -192,11 +189,11 @@ try {
     
     const sortBusinessByMembership = (business) => {
         return business.sort((a, b) => {
-          const membershipA = membershipOrder.indexOf(a.membership);
-          const membershipB = membershipOrder.indexOf(b.membership);
-          return membershipA - membershipB;
+            const membershipA = membershipOrder.indexOf(a.membership);
+            const membershipB = membershipOrder.indexOf(b.membership);
+            return membershipA - membershipB;
         });
-      };
+        };
     
     const displayBusiness = (business) => {
         const cards = document.querySelector(".directory-main article");
@@ -236,24 +233,23 @@ try {
             if (cards != null) {cards.appendChild(card)};
     
             function setMembershipColor() {
-                 if (business.membership == "np") {
+                    if (business.membership == "np") {
                     return "np";
                 }
                 if (business.membership == "bronze") {
                     return "bronze";
                 }
-                 if (business.membership == "silver") {
+                    if (business.membership == "silver") {
                     return "silver";
                 }
-                 if (business.membership == "gold") {
+                    if (business.membership == "gold") {
                     return "gold";
                 }
             }
         })
     }
     getBusinessData();
-} catch (error) {console.log(error)}
-
+}
 /* WEATHER */
 const temperature = document.querySelector("#temperature");
 const weatherPicture = document.querySelector("#weather-picture");
@@ -264,7 +260,6 @@ const weatherDesc = document.querySelector("#weather-description");
 const url = 'https://api.openweathermap.org/data/2.5/weather?q=Funes&appid=54da382318799586745f2112ab1d86ec&units=imperial'
 
 async function apiFetch() {
-
         const response = await fetch(url);
         if (response.ok) {
         const data = await response.json();
@@ -276,7 +271,8 @@ async function apiFetch() {
     } 
     function  displayResults(weatherData) {
     try {
-    temperature.innerHTML = `<strong>${fahrenheitToCelsius(weatherData.main.temp).toFixed(1)}</strong>`} catch (error) {console.log(error)};
+    temperature.innerHTML = `<strong>${fahrenheitToCelsius(weatherData.main.temp).toFixed(1)}</strong>`
+    } catch (error) {console.log(error)};
     const iconsrc = `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
     const desc = weatherData.weather[0].description.toUpperCase();
 
@@ -284,9 +280,9 @@ async function apiFetch() {
         weatherPicture.setAttribute('src', iconsrc);
         weatherPicture.setAttribute('alt', desc);
         weatherDesc.textContent = desc;
-        windSpeed.innerHTML = `${mphToKmh(weatherData.wind.speed).toFixed(1)}` 
+        windSpeed.innerHTML = `${windchill.mphToKmh(weatherData.wind.speed).toFixed(1)}` 
     } catch (error) {console.log(error)};
-    
+    windchill.runWindChill();
     }
 
     apiFetch();

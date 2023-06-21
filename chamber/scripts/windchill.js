@@ -1,8 +1,10 @@
 
 // GET TEMPERATURE AND WINDSPEED ELEMENTS
-const temperatureC = parseFloat(document.querySelector("#temperature").textContent);
-const windSpeedKmh = parseFloat(document.querySelector("#windSpeed").textContent);
-console.log(temperatureC, windSpeedKmh)
+export function runWindChill() {
+    const temperatureC = parseFloat(document.querySelector("#temperature").textContent);
+    const windSpeedKmh = parseFloat(document.querySelector("#windSpeed").textContent);
+    console.log(temperatureC, windSpeedKmh)
+
 // If temperature in °C is below 10 and Wind speed in Km/h is above 4.8, run the code...
 if (temperatureC <= 10 && windSpeedKmh > 4.8) {
     const temperatureF = celsiusToFahrenheit(temperatureC);
@@ -13,6 +15,7 @@ if (temperatureC <= 10 && windSpeedKmh > 4.8) {
 }
 else {
     document.querySelector("#windChill").textContent = "N/A";
+}
 }
 
 // -----FUNCTIONS-----
@@ -31,7 +34,7 @@ function celsiusToFahrenheit(temperatureC) {
  * @param {float} temperatureF Temperature in Fahrenheit
  * @returns  {float} Temperature in Celsius 
  */
-function fahrenheitToCelsius(temperatureF) {
+export function fahrenheitToCelsius(temperatureF) {
     return (temperatureF - 32) * 5 / 9;
 }
 
@@ -45,6 +48,14 @@ function kmhToMph(speedKmh) {
 }
 
 /**
+ * Converts the speed from Mph to Kmh and returns it
+ * @param {float} speedMph Speed in Mph
+ * @returns Speed in Kmh
+ */
+export function mphToKmh(speedMph) {
+    return speedMph * 1.60934 
+}
+/**
  * Calculates the windchill using the formula and returns it
  * @param {float} temperatureF Temperature in Fahrenheit
  * @param {float} windSpeedMph Windspeed in Mph
@@ -54,4 +65,3 @@ function calculateWindChill(temperatureF, windSpeedMph) {
     const windChill = 35.74 + 0.6215 * temperatureF - 35.75 * Math.pow(windSpeedMph,0.16) + 0.4275 * temperatureF * Math.pow(windSpeedMph, 0.16);
     return windChill;
 }
-
