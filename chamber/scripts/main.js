@@ -23,7 +23,7 @@ todayDateField.innerHTML = fulldate;
 
 /* JOIN US BANNER */
 /* Display banner if day is Monday or Wednesday, it's forcing to hide it instead */
-const meetingBanner = document.querySelector(".home-meeting-banner")
+const meetingBanner = document.querySelector("#home-meeting-banner")
 try {
     if (date.getDay() === 1 || date.getDay() === 2) {
     meetingBanner.style.display = "block";
@@ -160,24 +160,23 @@ function getHiddenDate() {
 
 /* DIRECTORY PAGE */
 /* SHOW LIST OR GRID BUTTONS */
-try {
+
     const gridBtn = document.querySelector("#grid");
     const listBtn = document.querySelector("#list");
     const display = document.querySelector(".directory-main article");
-
-    gridBtn.addEventListener("click", () => {
-        updateView("grid")
-        });
-    listBtn.addEventListener("click", () => {
-        updateView("list")
-        });
     
+    if (gridBtn != null) {
+        gridBtn.addEventListener("click", () => {
+            updateView("grid")
+            });
+        listBtn.addEventListener("click", () => {
+            updateView("list")
+            });
+    } 
     function updateView(view) {
         display.classList.toggle("grid", view === "grid");
         display.classList.toggle("list", view === "list");
     }
-} catch (error) {console.log(error)}
-
 /* CREATE CARDS FROM API */
 try {
     const urlBusiness = "https://ndamatta.github.io/wdd230/chamber/data.json"
@@ -234,7 +233,7 @@ try {
             card.appendChild(phone);
             card.appendChild(url);
     
-            try {cards.appendChild(card);} catch (error) {console.log(error)};
+            if (cards != null) {cards.appendChild(card)};
     
             function setMembershipColor() {
                  if (business.membership == "np") {
