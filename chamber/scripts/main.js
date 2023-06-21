@@ -16,13 +16,14 @@ todayDateField.innerHTML = fulldate;
 /* JOIN US BANNER */
 /* Display banner if day is Monday or Wednesday, it's forcing to hide it instead */
 const meetingBanner = document.querySelector(".home-meeting-banner")
-
-if (date.getDay() === 1 || date.getDay() === 2) {
+try {
+    if (date.getDay() === 1 || date.getDay() === 2) {
     meetingBanner.style.display = "block";
 }
 else {
     meetingBanner.style.display = "none";
 }
+} catch (error) {console.log(error)};
 
 /* FOOTER COPYRIGHT YEAR AND LAST MODIFIED */
 let lastModified = document.querySelector(".lastmodified")
@@ -151,93 +152,138 @@ function getHiddenDate() {
 
 /* DIRECTORY PAGE */
 /* SHOW LIST OR GRID BUTTONS */
-const gridBtn = document.querySelector("#grid");
-const listBtn = document.querySelector("#list");
-const display = document.querySelector(".directory-main article");
+try {
+    const gridBtn = document.querySelector("#grid");
+    const listBtn = document.querySelector("#list");
+    const display = document.querySelector(".directory-main article");
 
-gridBtn.addEventListener("click", () => {
-    updateView("grid")
-});
-listBtn.addEventListener("click", () => {
-    updateView("list")
-});
+    gridBtn.addEventListener("click", () => {
+        updateView("grid")
+        });
+    listBtn.addEventListener("click", () => {
+        updateView("list")
+        });
+    
+    function updateView(view) {
+        display.classList.toggle("grid", view === "grid");
+        display.classList.toggle("list", view === "list");
+    }
+} catch (error) {console.log(error)}
 
-function updateView(view) {
-    display.classList.toggle("grid", view === "grid");
-    display.classList.toggle("list", view === "list");
-}
 /* CREATE CARDS FROM API */
-const urlBusiness = "https://ndamatta.github.io/wdd230/chamber/data.json"
+try {
+    const urlBusiness = "https://ndamatta.github.io/wdd230/chamber/data.json"
 
-async function getBusinessData() {
-    const response = await fetch(urlBusiness);
-    const data = await response.json();
-    const sortedBusiness = sortBusinessByMembership(data.business);
-    displayBusiness(sortedBusiness);
-}
+    async function getBusinessData() {
+        const response = await fetch(urlBusiness);
+        const data = await response.json();
+        const sortedBusiness = sortBusinessByMembership(data.business);
+        displayBusiness(sortedBusiness);
+    }
+    
+    const membershipOrder = ["gold", "silver", "bronze", "np"];
+    
+    const sortBusinessByMembership = (business) => {
+        return business.sort((a, b) => {
+          const membershipA = membershipOrder.indexOf(a.membership);
+          const membershipB = membershipOrder.indexOf(b.membership);
+          return membershipA - membershipB;
+        });
+      };
+    
+    const displayBusiness = (business) => {
+        const cards = document.querySelector(".directory-main article");
+    
+        business.forEach((business) => {
+            let card = document.createElement("section");
+            let name = document.createElement("div");
+            let img = document.createElement("img");
+            let h2 = document.createElement("h2");
+            let h3 = document.createElement("h3");
+            let address = document.createElement("p");
+            let phone = document.createElement("p");
+            let url = document.createElement("a");
+    
+            h2.textContent = `${business.name}`;
+            h3.textContent = `${business.membership.toUpperCase()}` ;
+            address.textContent = `${business.address}`;
+            phone.textContent = `${business.phone}`;
+            url.textContent = `${business.url}`;
+            
+            img.setAttribute("src", `images/${business.img}`);
+            img.setAttribute("alt", `Logo of ${business.name}`)
+            h3.setAttribute("class", setMembershipColor());
+            address.setAttribute("class", "directory-address");
+            phone.setAttribute("class", "directory-phone");
+            url.setAttribute("href", `https://${business.url}`);
+            url.setAttribute("target", "_blank");
+    
+            card.appendChild(img);
+            name.appendChild(h2);
+            name.appendChild(h3);
+            card.appendChild(name);
+            card.appendChild(address);
+            card.appendChild(phone);
+            card.appendChild(url);
+    
+            try {cards.appendChild(card);} catch (error) {console.log(error)};
+    
+            function setMembershipColor() {
+                 if (business.membership == "np") {
+                    return "np";
+                }
+                if (business.membership == "bronze") {
+                    return "bronze";
+                }
+                 if (business.membership == "silver") {
+                    return "silver";
+                }
+                 if (business.membership == "gold") {
+                    return "gold";
+                }
+            }
+        })
+    }
+    getBusinessData();
+} catch (error) {console.log(error)}
 
-const membershipOrder = ["gold", "silver", "bronze", "np"];
-
-const sortBusinessByMembership = (business) => {
-    return business.sort((a, b) => {
-      const membershipA = membershipOrder.indexOf(a.membership);
-      const membershipB = membershipOrder.indexOf(b.membership);
-      return membershipA - membershipB;
-    });
-  };
-
-const displayBusiness = (business) => {
-    const cards = document.querySelector(".directory-main article");
-
-    business.forEach((business) => {
-        let card = document.createElement("section");
-        let name = document.createElement("div");
-        let img = document.createElement("img");
-        let h2 = document.createElement("h2");
-        let h3 = document.createElement("h3");
-        let address = document.createElement("p");
-        let phone = document.createElement("p");
-        let url = document.createElement("a");
-
-        h2.textContent = `${business.name}`;
-        h3.textContent = `${business.membership.toUpperCase()}` ;
-        address.textContent = `${business.address}`;
-        phone.textContent = `${business.phone}`;
-        url.textContent = `${business.url}`;
+/* WEATHER */
+try {
+    const temperature = document.querySelector('#temperature');
+    const weatherPicture = document.querySelector('#weather-picture');
+    const captionDesc = document.querySelector('figcaption');
+    
+    const url = 'https://api.openweathermap.org/data/2.5/weather?q=Fairbanks&appid=cbb8d5e1cf97e51db015d685ee3d3340&units=imperial';
+    /* const url = 'https://api.openweathermap.org/data/2.5/weather?q=Fairbanks&appid=54da382318799586745f2112ab1d86ec&units=imperial'; THIS IS MY APPID, I'm waiting for it to be activated*/ 
+    
+    async function apiFetch() {
+    
+          const response = await fetch(url);
+          if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+            displayResults(data)
+          } else {
+              throw Error(await response.text());
+          }
+        } 
+      function  displayResults(weatherData) {
+        try {temperature.innerHTML = `<strong>${weatherData.main.temp.toFixed(0)}</strong>`} catch (error) {console.log(error)};
+      
+        const iconsrc = `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
+        const desc = weatherData.weather[0].description;
+        try {
+            weatherPicture.setAttribute('src', iconsrc);
+            weatherPicture.setAttribute('alt', desc);
+            captionDesc.textContent = desc;
+        } catch (error) {console.log(error)};
         
-        img.setAttribute("src", `images/${business.img}`);
-        img.setAttribute("alt", `Logo of ${business.name}`)
-        h3.setAttribute("class", setMembershipColor());
-        address.setAttribute("class", "directory-address");
-        phone.setAttribute("class", "directory-phone");
-        url.setAttribute("href", `https://${business.url}`);
-        url.setAttribute("target", "_blank");
+      }
+    
+      apiFetch();
+} catch (error) {console.log(error)};
 
-        card.appendChild(img);
-        name.appendChild(h2);
-        name.appendChild(h3);
-        card.appendChild(name);
-        card.appendChild(address);
-        card.appendChild(phone);
-        card.appendChild(url);
 
-        cards.appendChild(card);
 
-        function setMembershipColor() {
-             if (business.membership == "np") {
-                return "np";
-            }
-            if (business.membership == "bronze") {
-                return "bronze";
-            }
-             if (business.membership == "silver") {
-                return "silver";
-            }
-             if (business.membership == "gold") {
-                return "gold";
-            }
-        }
-    })
-}
-getBusinessData();
+  
 
