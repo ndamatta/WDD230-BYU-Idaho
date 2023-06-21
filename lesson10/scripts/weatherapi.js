@@ -3,6 +3,7 @@ const weatherIcon = document.querySelector('#weather-icon');
 const captionDesc = document.querySelector('figcaption');
 
 const url = 'https://api.openweathermap.org/data/2.5/weather?q=Fairbanks&appid=cbb8d5e1cf97e51db015d685ee3d3340&units=imperial';
+/* const url = 'https://api.openweathermap.org/data/2.5/weather?q=Fairbanks&appid=54da382318799586745f2112ab1d86ec&units=imperial'; THIS IS MY APPID, I'm waiting for it to be activated*/ 
 
 async function apiFetch() {
     try {
