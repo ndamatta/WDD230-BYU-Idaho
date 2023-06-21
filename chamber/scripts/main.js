@@ -1,3 +1,11 @@
+/* F to C */
+function fahrenheitToCelsius(temperatureF) {
+    return (temperatureF - 32) * 5 / 9;
+}
+/* mph to kmh */
+function mphToKmh(speedMph) {
+    return speedMph * 1.60934 
+}
 /* HAMBURGER BUTTON */
 function toggleMenu() {
     document.getElementById("primaryNav").classList.toggle("open");
@@ -248,40 +256,42 @@ try {
 } catch (error) {console.log(error)}
 
 /* WEATHER */
-try {
-    const temperature = document.querySelector('#temperature');
-    const weatherPicture = document.querySelector('#weather-picture');
-    const captionDesc = document.querySelector('figcaption');
+const temperature = document.querySelector("#temperature");
+const weatherPicture = document.querySelector("#weather-picture");
+const windSpeed = document.querySelector("#windSpeed")
+const weatherDesc = document.querySelector("#weather-description");
+
+/*  const url = 'https://api.openweathermap.org/data/2.5/weather?q=Fairbanks&appid=cbb8d5e1cf97e51db015d685ee3d3340&units=imperial'; */
+const url = 'https://api.openweathermap.org/data/2.5/weather?q=Funes&appid=54da382318799586745f2112ab1d86ec&units=imperial'
+
+async function apiFetch() {
+
+        const response = await fetch(url);
+        if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        displayResults(data)
+        } else {
+            throw Error(await response.text());
+        }
+    } 
+    function  displayResults(weatherData) {
+    try {
+    temperature.innerHTML = `<strong>${fahrenheitToCelsius(weatherData.main.temp).toFixed(1)}</strong>`} catch (error) {console.log(error)};
+    const iconsrc = `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
+    const desc = weatherData.weather[0].description.toUpperCase();
+
+    try {
+        weatherPicture.setAttribute('src', iconsrc);
+        weatherPicture.setAttribute('alt', desc);
+        weatherDesc.textContent = desc;
+        windSpeed.innerHTML = `${mphToKmh(weatherData.wind.speed).toFixed(1)}` 
+    } catch (error) {console.log(error)};
     
-    const url = 'https://api.openweathermap.org/data/2.5/weather?q=Fairbanks&appid=cbb8d5e1cf97e51db015d685ee3d3340&units=imperial';
-    /* const url = 'https://api.openweathermap.org/data/2.5/weather?q=Fairbanks&appid=54da382318799586745f2112ab1d86ec&units=imperial'; THIS IS MY APPID, I'm waiting for it to be activated*/ 
-    
-    async function apiFetch() {
-    
-          const response = await fetch(url);
-          if (response.ok) {
-            const data = await response.json();
-            console.log(data);
-            displayResults(data)
-          } else {
-              throw Error(await response.text());
-          }
-        } 
-      function  displayResults(weatherData) {
-        try {temperature.innerHTML = `<strong>${weatherData.main.temp.toFixed(0)}</strong>`} catch (error) {console.log(error)};
-      
-        const iconsrc = `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
-        const desc = weatherData.weather[0].description;
-        try {
-            weatherPicture.setAttribute('src', iconsrc);
-            weatherPicture.setAttribute('alt', desc);
-            captionDesc.textContent = desc;
-        } catch (error) {console.log(error)};
-        
-      }
-    
-      apiFetch();
-} catch (error) {console.log(error)};
+    }
+
+    apiFetch();
+
 
 
 
