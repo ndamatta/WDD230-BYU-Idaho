@@ -1,0 +1,5 @@
+body main h1 {
+    border-bottom: 2px solid blue;
+    width: 40%;
+    text-shadow: 1px 1px 5px lightblue;
+}
