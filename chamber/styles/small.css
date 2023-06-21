@@ -97,6 +97,7 @@ header {
     grid-template-columns: 1fr;
     font-family: 'Montserrat', sans-serif;
 }
+.index-main #lastVisit{display: none;}
 .index-main > div {
     background-color: #ADD8E6;
     margin: 1rem;
@@ -149,7 +150,7 @@ header {
 }
 
 /* HOME - BANNER */
-.home-meeting-banner {
+#home-meeting-banner {
     text-shadow: 1px 1px 1px;
     font-size: .7rem;
     width: 80%;
@@ -304,7 +305,7 @@ footer {
 
 /* DISCOVER PAGE */
 .discover-main {grid-template-columns: 1fr}
-/* .join-main .join-meeting-banner {display: none;} */
+#discover-meeting-banner {display: none;}
 #lastVisit {
     display: flex;
     align-items: center;
@@ -356,6 +357,7 @@ footer {
     grid-template-columns: 1fr;
 }
 .join-main .lastVisit {display: none;}
+#join-meeting-banner{display: none;}
 form {
     text-align: left;
     display: flex;
@@ -436,7 +438,7 @@ form label.top input:required:valid {
 .directory-main .directory-hide {display: none;}
 /* IF GRID */
 .directory-main #lastVisit {display: none;}
-.directory-main .home-meeting-banner {display: none;}
+#directory-meeting-banner {display: none;}
 .directory-main .grid {
     display: grid;
 	grid-template-columns: 1fr;
