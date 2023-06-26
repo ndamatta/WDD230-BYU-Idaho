@@ -3,7 +3,6 @@
 export function runWindChill() {
     const temperatureC = parseFloat(document.querySelector("#temperature").textContent);
     const windSpeedKmh = parseFloat(document.querySelector("#windSpeed").textContent);
-    console.log(temperatureC, windSpeedKmh)
 
 // If temperature in °C is below 10 and Wind speed in Km/h is above 4.8, run the code...
 if (temperatureC <= 10 && windSpeedKmh > 4.8) {
