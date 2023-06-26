@@ -1,14 +1,10 @@
-import * as windchill from "./windchill.js"
-/* F to C */
-function fahrenheitToCelsius(temperatureF) {
-    return (temperatureF - 32) * 5 / 9;
-}
-/* mph to kmh */
+// import {fahrenheitToCelsius,mphToKmh, runWindChill } from "./windchill.js";
+
 /* HAMBURGER BUTTON */
 function toggleMenu() {
     document.getElementById("primaryNav").classList.toggle("open");
     document.getElementById("hamburgerBtn").classList.toggle("open");
-}
+};
 
 const x = document.getElementById("hamburgerBtn")
 x.onclick = toggleMenu;
@@ -29,7 +25,7 @@ if (meetingBanner != null) {
     else {
         meetingBanner.style.display = "none";
     }
-}
+};
 /* FOOTER COPYRIGHT YEAR AND LAST MODIFIED */
 let lastModified = document.querySelector(".lastmodified")
 let lastModified2 = document.querySelector(".lastmodified2")
@@ -45,254 +41,251 @@ const lastModifiedOptions = {
 };
 const currentYearOptions = {
     year: "numeric",
-}
+};
 lastModified.textContent = ` Last Modified: ${new Date(document.lastModified).toLocaleDateString("en-US", lastModifiedOptions)}`;
 lastModified2.textContent = ` Last Modified: ${new Date(document.lastModified).toLocaleDateString("en-US", lastModifiedOptions)}`;
 currentYear.textContent = `${new Date().toLocaleDateString("en-US", currentYearOptions)}`
 
-/* DISCOVER - LAZY LOAD */
-const imagesToLoad = document.querySelectorAll(".image-gallery img[data-src]");
+// /* DISCOVER - LAZY LOAD */
+// const imagesToLoad = document.querySelectorAll(".image-gallery img[data-src]");
 
-const imgOptions = {
-    threshold: 1,
-    rootMargin: "0px 0px 50px 0px"
-}
+// const imgOptions = {
+//     threshold: 1,
+//     rootMargin: "0px 0px 50px 0px"
+// };
 
-const loadImages = (image) => {
-  image.setAttribute("src", image.getAttribute("data-src"));
-  image.onload = () => {image.removeAttribute("data-src");};
-};
+// const loadImages = (image) => {
+// image.setAttribute("src", image.getAttribute("data-src"));
+// image.onload = () => {image.removeAttribute("data-src");};
+// };
 
-if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver((items, observer) => {
-        items.forEach((item) => {
-        if (item.isIntersecting) {
-            loadImages(item.target);
-            observer.unobserve(item.target);
-        }
-        });
-    }, imgOptions);
+// if ("IntersectionObserver" in window) {
+//     const observer = new IntersectionObserver((items, observer) => {
+//         items.forEach((item) => {
+//         if (item.isIntersecting) {
+//             loadImages(item.target);
+//             observer.unobserve(item.target);
+//         }
+//         });
+//     }, imgOptions);
 
-    imagesToLoad.forEach((img) => {
-        observer.observe(img);
-    });
-} 
-else {
-    imagesToLoad.forEach((img) => {
-        loadImages(img);
-    });
-}
+//     imagesToLoad.forEach((img) => {
+//         observer.observe(img);
+//     });
+// } 
+// else {
+//     imagesToLoad.forEach((img) => {
+//         loadImages(img);
+//     });
+// };
 
-/* DISCOVER - LAST VISIT */
-let lastVisit = localStorage.getItem("lastVisit");
-const lastVisitElement = document.querySelector("#lastVisit p");
+// /* DISCOVER - LAST VISIT */
+// let lastVisit = localStorage.getItem("lastVisit");
+// const lastVisitElement = document.querySelector("#lastVisit p");
 
-if (lastVisitElement != null) {
-    if (lastVisit) {
-        let currentDate = new Date();
-        let previousDate = new Date(lastVisit);
-        let timeDifference = currentDate.getTime() - previousDate.getTime();
+// if (lastVisitElement != null) {
+//     if (lastVisit) {
+//         let currentDate = new Date();
+//         let previousDate = new Date(lastVisit);
+//         let timeDifference = currentDate.getTime() - previousDate.getTime();
     
-        let differenceInDays = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+//         let differenceInDays = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
     
-        lastVisitElement.innerText = `You visited this webpage ${differenceInDays} days ago!`;
-    }
-    localStorage.setItem("lastVisit", new Date());
-}
+//         lastVisitElement.innerText = `You visited this webpage ${differenceInDays} days ago!`;
+//     }
+//     localStorage.setItem("lastVisit", new Date());
+// };
 
-/* JOIN */
-function showMembershipInfo(membership) {
-    const membershipDiv = document.querySelector(".membership-info");
-    var info = "";
+// /* JOIN */
+// function msg(){console.log("asd")};
+// function showMembershipInfo(membership) {
+//     const membershipDiv = document.querySelector(".membership-info");
+//     var info = "";
+//     switch (membership) {
+//         case "np":
+//         info = 
+//         `
+//         <ul>
+//         <li>Monthly price: <b>$0</b></li>
+//         <li>Access to resources for non-profits</li>
+//         <li>Listing in member directory for increased opportunities</li>
+//         </ul>
+//         `
+//         break;
 
-    if (membership === "np") {
-        info = 
-        `
-        <ul>
-        <li>Monthly price: <b>$0</b></li>
-        <li>Access to resources for non-profits</li>
-        <li>Listing in member directory for increased opportunities</li>
-        </ul>
-        `
-    }
-    else if (membership === "bronze") {
-        info = 
-        `
-        <ul>
-        <li>Monthly price: <b>$100</b></li>
-        <li>2 professional training sessions per month</li>
-        <li>Workshops for professional development</li>
-        </ul>
-        `
-    }
-    else if (membership === "silver") {
-        info = 
-        `
-        <ul>
-        <li>Monthly price: <b>$250</b></li>
-        <li>5 professional training sessions per month</li>
-        <li>3 days of advertising in spotlight</li>
-        <li>Up to 25% off in association events and conferences</li>
-        </ul>
-        `
-    }
-    else if (membership === "gold") {
-        info = 
-        `
-        <ul>
-        <li>Monthly price: <b>$400</b></li>
-        <li>Unlimited professional training sessions per month</li>
-        <li>7 days of advertising in spotlight</li>
-        <li>Up to 50% off in association events and conferences</li>
-        <li>And many more...</li>
-        </ul>
-        `
-    }
+//         case "bronze":
+//         info = 
+//         `
+//         <ul>
+//         <li>Monthly price: <b>$100</b></li>
+//         <li>2 professional training sessions per month</li>
+//         <li>Workshops for professional development</li>
+//         </ul>
+//         `
+//         break;
 
-    membershipDiv.innerHTML = info;
-}
-    /* GET LOCAL DAY */
-function getHiddenDate() {
-    let dateElement = document.querySelector("#hiddenDate");
-    dateElement.value = date.toLocaleDateString("en-US", lastModifiedOptions);
-    console.log(hiddenDate.value);
-}
+//         case "silver":
+//         info = 
+//         `
+//         <ul>
+//         <li>Monthly price: <b>$250</b></li>
+//         <li>5 professional training sessions per month</li>
+//         <li>3 days of advertising in spotlight</li>
+//         <li>Up to 25% off in association events and conferences</li>
+//         </ul>
+//         `
+//         break;
 
-/* SHOW LIST OR GRID BUTTONS */
+//         case "gold":
+//         info = 
+//         `
+//         <ul>
+//         <li>Monthly price: <b>$400</b></li>
+//         <li>Unlimited professional training sessions per month</li>
+//         <li>7 days of advertising in spotlight</li>
+//         <li>Up to 50% off in association events and conferences</li>
+//         <li>And many more...</li>
+//         </ul>
+//         `
+//         break;
+//     }
+//     membershipDiv.innerHTML = info;
+// }
 
-const gridBtn = document.querySelector("#grid");
-const listBtn = document.querySelector("#list");
-const display = document.querySelector(".directory-main article");
+// /* GET LOCAL DAY */
+// function getHiddenDate() {
+//     let dateElement = document.querySelector("#hiddenDate");
+//     dateElement.value = date.toLocaleDateString("en-US", lastModifiedOptions);
+//     console.log(hiddenDate.value);
+// };
 
-if (gridBtn != null) {
-    gridBtn.addEventListener("click", () => {
-        updateView("grid")
-        });
-    listBtn.addEventListener("click", () => {
-        updateView("list")
-        });
-} 
-function updateView(view) {
-    display.classList.toggle("grid", view === "grid");
-    display.classList.toggle("list", view === "list");
-}
-/* CREATE CARDS FROM API */
-const urlBusiness = "https://ndamatta.github.io/wdd230/chamber/data.json"
-let check = document.querySelector(".directory-main article");
+// /* SHOW LIST OR GRID BUTTONS */
 
-if (check != null) {
-    async function getBusinessData() {
-        const response = await fetch(urlBusiness);
-        const data = await response.json();
-        const sortedBusiness = sortBusinessByMembership(data.business);
-        displayBusiness(sortedBusiness);
-    }
+// const gridBtn = document.querySelector("#grid");
+// const listBtn = document.querySelector("#list");
+// const display = document.querySelector(".directory-main article");
+
+// if (gridBtn != null) {
+//     gridBtn.addEventListener("click", () => {
+//         updateView("grid")
+//         })
+//     listBtn.addEventListener("click", () => {
+//         updateView("list")
+//         })
+// } ;
+// function updateView(view) {
+//     display.classList.toggle("grid", view === "grid");
+//     display.classList.toggle("list", view === "list");
+// }
+// /* CREATE CARDS FROM API */
+// const urlBusiness = "https://ndamatta.github.io/wdd230/chamber/data.json"
+// let check = document.querySelector(".directory-main article");
+
+// if (check != null) {
+//     async function getBusinessData() {
+//         const response = await fetch(urlBusiness);
+//         const data = await response.json();
+//         const sortedBusiness = sortBusinessByMembership(data.business);
+//         displayBusiness(sortedBusiness);
+//     }
     
-    const membershipOrder = ["gold", "silver", "bronze", "np"];
+//     const membershipOrder = ["gold", "silver", "bronze", "np"];
     
-    const sortBusinessByMembership = (business) => {
-        return business.sort((a, b) => {
-            const membershipA = membershipOrder.indexOf(a.membership);
-            const membershipB = membershipOrder.indexOf(b.membership);
-            return membershipA - membershipB;
-        });
-        };
+//     const sortBusinessByMembership = (business) => {
+//         return business.sort((a, b) => {
+//             const membershipA = membershipOrder.indexOf(a.membership);
+//             const membershipB = membershipOrder.indexOf(b.membership);
+//             return membershipA - membershipB;
+//         });
+//         };
     
-    const displayBusiness = (business) => {
-        const cards = document.querySelector(".directory-main article");
+//     const displayBusiness = (business) => {
+//         const cards = document.querySelector(".directory-main article");
     
-        business.forEach((business) => {
-            let card = document.createElement("section");
-            let name = document.createElement("div");
-            let img = document.createElement("img");
-            let h2 = document.createElement("h2");
-            let h3 = document.createElement("h3");
-            let address = document.createElement("p");
-            let phone = document.createElement("p");
-            let url = document.createElement("a");
+//         business.forEach((business) => {
+//             let card = document.createElement("section");
+//             let name = document.createElement("div");
+//             let img = document.createElement("img");
+//             let h2 = document.createElement("h2");
+//             let h3 = document.createElement("h3");
+//             let address = document.createElement("p");
+//             let phone = document.createElement("p");
+//             let url = document.createElement("a");
     
-            h2.textContent = `${business.name}`;
-            h3.textContent = `${business.membership.toUpperCase()}` ;
-            address.textContent = `${business.address}`;
-            phone.textContent = `${business.phone}`;
-            url.textContent = `${business.url}`;
+//             h2.textContent = `${business.name}`;
+//             h3.textContent = `${business.membership.toUpperCase()}` ;
+//             address.textContent = `${business.address}`;
+//             phone.textContent = `${business.phone}`;
+//             url.textContent = `${business.url}`;
             
-            img.setAttribute("src", `images/${business.img}`);
-            img.setAttribute("alt", `Logo of ${business.name}`)
-            h3.setAttribute("class", setMembershipColor());
-            address.setAttribute("class", "directory-address");
-            phone.setAttribute("class", "directory-phone");
-            url.setAttribute("href", `https://${business.url}`);
-            url.setAttribute("target", "_blank");
+//             img.setAttribute("src", `images/${business.img}`);
+//             img.setAttribute("alt", `Logo of ${business.name}`)
+//             h3.setAttribute("class", setMembershipColor());
+//             address.setAttribute("class", "directory-address");
+//             phone.setAttribute("class", "directory-phone");
+//             url.setAttribute("href", `https://${business.url}`);
+//             url.setAttribute("target", "_blank");
     
-            card.appendChild(img);
-            name.appendChild(h2);
-            name.appendChild(h3);
-            card.appendChild(name);
-            card.appendChild(address);
-            card.appendChild(phone);
-            card.appendChild(url);
+//             card.appendChild(img);
+//             name.appendChild(h2);
+//             name.appendChild(h3);
+//             card.appendChild(name);
+//             card.appendChild(address);
+//             card.appendChild(phone);
+//             card.appendChild(url);
     
-            if (cards != null) {cards.appendChild(card)};
+//             if (cards != null) {cards.appendChild(card)};
     
-            function setMembershipColor() {
-                    if (business.membership == "np") {
-                    return "np";
-                }
-                if (business.membership == "bronze") {
-                    return "bronze";
-                }
-                    if (business.membership == "silver") {
-                    return "silver";
-                }
-                    if (business.membership == "gold") {
-                    return "gold";
-                }
-            }
-        })
-    }
-    getBusinessData();
-}
+//             function setMembershipColor() {
+//                 if (business.membership == "np") {
+//                     return "np";
+//                 }
+//                 if (business.membership == "bronze") {
+//                     return "bronze";
+//                 }
+//                     if (business.membership == "silver") {
+//                     return "silver";
+//                 }
+//                     if (business.membership == "gold") {
+//                     return "gold";
+//                 }
+//             }
+//         })
+//     }
+//     getBusinessData();
+// };
 /* WEATHER */
-const temperature = document.querySelector("#temperature");
-const weatherPicture = document.querySelector("#weather-picture");
-const windSpeed = document.querySelector("#windSpeed")
-const weatherDesc = document.querySelector("#weather-description");
+// const temperature = document.querySelector("#temperature");
+// const weatherPicture = document.querySelector("#weather-picture");
+// const windSpeed = document.querySelector("#windSpeed")
+// const weatherDesc = document.querySelector("#weather-description");
 
-const url = 'https://api.openweathermap.org/data/2.5/weather?q=Funes&appid=54da382318799586745f2112ab1d86ec&units=imperial'
-if (temperature != null) { //Check if #temperature is in current .html, so it doesn't rise errors.
-    async function apiFetch() {
-        const response = await fetch(url);
-        if (response.ok) {
-        const data = await response.json();
-        console.log(data);
-        displayResults(data)
-        } else {
-            throw Error(await response.text());
-        }
-    } 
-    function  displayResults(weatherData) {
-    try {
-    temperature.innerHTML = `<strong>${fahrenheitToCelsius(weatherData.main.temp).toFixed(1)}</strong>`
-    } catch (error) {console.log(error)};
-    const iconsrc = `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
-    const desc = weatherData.weather[0].description.toUpperCase();
+// const url = 'https://api.openweathermap.org/data/2.5/weather?q=Funes&appid=54da382318799586745f2112ab1d86ec&units=imperial'
+// if (temperature != null) { //Check if #temperature is in current .html, so it doesn't rise errors.
+//     async function apiFetch() {
+//         const response = await fetch(url);
+//         if (response.ok) {
+//         const data = await response.json();
+//         displayResults(data)
+//         } else {
+//             throw Error(await response.text());
+//         }
+//     } 
+//     function  displayResults(weatherData) {
+//     try {
+//     temperature.innerHTML = `<strong>${fahrenheitToCelsius(weatherData.main.temp).toFixed(1)}</strong>`
+//     } catch (error) {console.log(error)};
+//     const iconsrc = `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
+//     const desc = weatherData.weather[0].description.toUpperCase();
 
-    try {
-        weatherPicture.setAttribute('src', iconsrc);
-        weatherPicture.setAttribute('alt', `Logo for ${desc}`);
-        weatherDesc.textContent = desc;
-        windSpeed.innerHTML = `${windchill.mphToKmh(weatherData.wind.speed).toFixed(1)}` 
-    } catch (error) {console.log(error)};
-    windchill.runWindChill();
-    }
+//     try {
+//         weatherPicture.setAttribute('src', iconsrc);
+//         weatherPicture.setAttribute('alt', `Logo for ${desc}`);
+//         weatherDesc.textContent = desc;
+//         windSpeed.innerHTML = `${mphToKmh(weatherData.wind.speed).toFixed(1)}` 
+//     } catch (error) {console.log(error)};
+//     runWindChill();
+//     }
 
-    apiFetch();
-}
-
-
-
-
-
-  
-
+//     apiFetch();
+// };
