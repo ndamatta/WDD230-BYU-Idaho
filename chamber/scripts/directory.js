@@ -5,42 +5,43 @@ const listBtn = document.querySelector("#list");
 const display = document.querySelector(".directory-main article");
 
 if (gridBtn != null) {
-    gridBtn.addEventListener("click", () => {
-        updateView("grid")
-        })
-    listBtn.addEventListener("click", () => {
-        updateView("list")
-        })
+gridBtn.addEventListener("click", () => {
+    updateView("grid")
+    })
+listBtn.addEventListener("click", () => {
+    updateView("list")
+    })
 } ;
 function updateView(view) {
-    display.classList.toggle("grid", view === "grid");
-    display.classList.toggle("list", view === "list");
+display.classList.toggle("grid", view === "grid");
+display.classList.toggle("list", view === "list");
 }
 /* CREATE CARDS FROM API */
 const urlBusiness = "https://ndamatta.github.io/wdd230/chamber/data.json"
-let check = document.querySelector(".directory-main article");
+const checkDirectory = document.querySelector(".directory-main article");
 
-if (check != null) {
-    async function getBusinessData() {
-        const response = await fetch(urlBusiness);
-        const data = await response.json();
-        const sortedBusiness = sortBusinessByMembership(data.business);
-        displayBusiness(sortedBusiness);
-    }
-    
-    const membershipOrder = ["gold", "silver", "bronze", "np"];
-    
-    const sortBusinessByMembership = (business) => {
-        return business.sort((a, b) => {
-            const membershipA = membershipOrder.indexOf(a.membership);
-            const membershipB = membershipOrder.indexOf(b.membership);
-            return membershipA - membershipB;
-        });
-        };
-    
-    const displayBusiness = (business) => {
+async function getBusinessData() {
+    const response = await fetch(urlBusiness);
+    const data = await response.json();
+    const sortedBusiness = sortBusinessByMembership(data.business);
+    displayBusiness("directory", sortedBusiness);
+}
+
+const membershipOrder = ["gold", "silver", "bronze", "np"];
+
+const sortBusinessByMembership = (business) => {
+    return business.sort((a, b) => {
+        const membershipA = membershipOrder.indexOf(a.membership);
+        const membershipB = membershipOrder.indexOf(b.membership);
+        return membershipA - membershipB;
+    });
+    };
+
+function displayBusiness(webpage, business) {
+    switch(webpage){
+        case "directory":
         const cards = document.querySelector(".directory-main article");
-    
+
         business.forEach((business) => {
             let card = document.createElement("section");
             let name = document.createElement("div");
@@ -73,8 +74,9 @@ if (check != null) {
             card.appendChild(phone);
             card.appendChild(url);
     
-            if (cards != null) {cards.appendChild(card)};
-    
+            if (cards != null) {
+                cards.appendChild(card)
+            }
             function setMembershipColor() {
                 if (business.membership == "np") {
                     return "np";
@@ -90,6 +92,9 @@ if (check != null) {
                 }
             }
         })
-    }
-    getBusinessData();
-};
+        break;
+
+        case "main":
+    };
+}
+getBusinessData();
