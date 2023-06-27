@@ -21,11 +21,17 @@ const urlBusiness = "https://ndamatta.github.io/wdd230/chamber/data.json"
 const checkDirectory = document.querySelector(".directory-main article");
 
 async function getBusinessData() {
+    const checkIfDirectory = document.querySelector(".directory-main");
+    const checkIfMain = document.querySelector(".index-main");
     const response = await fetch(urlBusiness);
     const data = await response.json();
     const sortedBusiness = sortBusinessByMembership(data.business);
-    displayBusiness("directory", sortedBusiness);
-    displayBusiness("main", data.business)
+    if (checkIfDirectory) {
+        displayBusiness("directory", sortedBusiness);
+    }
+    if (checkIfMain){
+        displayBusiness("main", data.business)
+    }
 }
 
 const membershipOrder = ["gold", "silver", "bronze", "np"];
@@ -37,6 +43,11 @@ const sortBusinessByMembership = (business) => {
         return membershipA - membershipB;
     });
     };
+
+function setMembershipColor(membership) {
+    if (membership == "gold") {return "gold"};
+    if (membership == "silver") {return "silver"};
+}
 
 function displayBusiness(webpage, business) {
     switch(webpage){
@@ -61,7 +72,7 @@ function displayBusiness(webpage, business) {
             
             img.setAttribute("src", `images/${business.img}`);
             img.setAttribute("alt", `Logo of ${business.name}`)
-            h3.setAttribute("class", setMembershipColor());
+            h3.setAttribute("class", setMembershipColor(business.membership));
             address.setAttribute("class", "directory-address");
             phone.setAttribute("class", "directory-phone");
             url.setAttribute("href", `https://${business.url}`);
@@ -109,7 +120,7 @@ function displayBusiness(webpage, business) {
                 sectionMain.setAttribute("id", `spotlight${spotlightNumber}`);
                 div1Main.setAttribute("class", "home-spotlight-section1"); 
                 div2Main.setAttribute("class", "home-spotlight-section2"); 
-                h3main.setAttribute("class", setMembershipColor());
+                h3main.setAttribute("class", setMembershipColor(business.membership));
                 imgMain.setAttribute("src", `images/${business.img}`);
                 imgMain.setAttribute("alt", `Logo of ${business.name}`);
 
@@ -128,18 +139,6 @@ function displayBusiness(webpage, business) {
                 }
             }
             )
-            function setMembershipColor() {
-                switch (business.membership) {
-                    case "np":
-                        return "np";
-                    case "bronze":
-                        return "bronze";
-                    case "silver":
-                        return "silver";
-                    case "gold":
-                        return "gold";
-                }
-            }
             function getRandomBusinesses(array, count) {
                 const shuffled = array.sort(() => 0.5 - Math.random());
                 return shuffled.slice(0, count);
