@@ -6,7 +6,8 @@
             "address":"Rioja 150, Funes",
             "phone":"+549 341 548 652",
             "url":"www.bestsoccer.com",
-            "membership":"bronze"
+            "membership":"bronze",
+            "description":"Let's play soccer!"
         },
         {
             "img":"fastest-taxi.webp",
@@ -14,7 +15,8 @@
             "address":"Santa Fe 190, Funes",
             "phone":"+549 341 525 456",
             "url":"www.fastestaxi.com",
-            "membership":"silver"
+            "membership":"silver",
+            "description":"Being Late? Never"
         },
         {
             "img":"cool-watches.webp",
@@ -22,7 +24,8 @@
             "address":"Santa Fe 1450, Funes",
             "phone":"+549 341 456 132",
             "url":"www.coolwatches.com",
-            "membership":"gold"
+            "membership":"gold",
+            "description":"What time is it?"
         },
         {
             "img":"tasty-biscuits.webp",
@@ -30,7 +33,8 @@
             "address":"San Lorenzo 380, Funes",
             "phone":"+549 341 298 456",
             "url":"www.biscuits.com",
-            "membership":"gold"
+            "membership":"gold",
+            "description":"Hmm tasty!"
         },
         {
             "img":"laptop-ready.webp",
@@ -38,7 +42,8 @@
             "address":"24 Septiembre 980, Funes",
             "phone":"+549 341 980 899",
             "url":"www.laptopready.com",
-            "membership":"silver"
+            "membership":"silver",
+            "description":"Laptop ready for you!"
         },
         {
             "img":"fridge-repairs.webp",
@@ -46,7 +51,8 @@
             "address":"San Jorge 1024, Funes",
             "phone":"+549 341 525 655",
             "url":"www.fsrepairs.com",
-            "membership":"bronze"
+            "membership":"bronze",
+            "description":"Cold and working!"
         },
         {
             "img":"comfortable-chairs.webp",
@@ -54,7 +60,8 @@
             "address":"Arijon 555, Funes",
             "phone":"+549 341 525 177",
             "url":"www.chairs.com",
-            "membership":"bronze"
+            "membership":"bronze",
+            "description":"Sit down!"
         },
         {
             "img":"juana-cakes.webp",
@@ -62,7 +69,8 @@
             "address":"San Lorenzo 322, Funes",
             "phone":"+549 341 999 789",
             "url":"www.juanacakes.com",
-            "membership":"np"
+            "membership":"np",
+            "description":"Best cakes!"
         },
         {
             "img":"pedro-puertas.webp",
@@ -70,7 +78,8 @@
             "address":"Favaloro 422, Funes",
             "phone":"+549 341 525 416",
             "url":"www.pedropuertas.com",
-            "membership":"gold"
+            "membership":"gold",
+            "description":"Best doors!"
         }
         
     ]
