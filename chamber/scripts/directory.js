@@ -25,6 +25,7 @@ async function getBusinessData() {
     const data = await response.json();
     const sortedBusiness = sortBusinessByMembership(data.business);
     displayBusiness("directory", sortedBusiness);
+    displayBusiness("main", data.business)
 }
 
 const membershipOrder = ["gold", "silver", "bronze", "np"];
@@ -77,34 +78,72 @@ function displayBusiness(webpage, business) {
             if (cards != null) {
                 cards.appendChild(card)
             }
-            function setMembershipColor() {
-                if (business.membership == "np") {
-                    return "np";
-                }
-                if (business.membership == "bronze") {
-                    return "bronze";
-                }
-                if (business.membership == "silver") {
-                    return "silver";
-                }
-                if (business.membership == "gold") {
-                    return "gold";
-                }
-            }
         })
         break;
 
         case "main":
-            const sectionMain = document.createElement("section");
-            const h2Main = document.createElement("h2");
-            const div1Main = document.createElement("div");
-            const imgMain = document.createElement("img");
-            const p1Main = document.createElement("p");
-            const div2Main = document.createElement("div");
-            const p2Main = document.createElement("p");
-            const p3Main = document.createElement("p");
-            const aMain = document.createElement("a");
+            let spotlightNumber = 0;
+            const div = document.querySelector(".home-spotlight");
+            const filteredBusinesses = business.filter(business => business.membership === "gold" || business.membership === "silver");
+            const selectedBusinesses = getRandomBusinesses(filteredBusinesses, 3);
 
+            selectedBusinesses.forEach((business, index) => {
+                spotlightNumber ++;
+
+                const sectionMain = document.createElement("section");
+                const h2Main = document.createElement("h2");
+                const div1Main = document.createElement("div");
+                const imgMain = document.createElement("img");
+                const p1Main = document.createElement("p");
+                const div2Main = document.createElement("div");
+                const p2Main = document.createElement("p");
+                const p3Main = document.createElement("p");
+                const h3main = document.createElement("h3");
+    
+                h2Main.textContent = `${business.name}`
+                h3main.textContent = `${business.membership.toUpperCase()}` ;
+                p1Main.textContent = `${business.description}`;
+                p2Main.textContent = `${business.email}`;
+                p3Main.textContent = `${business.phone} | ${business.url}`;
+    
+                sectionMain.setAttribute("id", `spotlight${spotlightNumber}`);
+                div1Main.setAttribute("class", "home-spotlight-section1"); 
+                div2Main.setAttribute("class", "home-spotlight-section2"); 
+                h3main.setAttribute("class", setMembershipColor());
+                imgMain.setAttribute("src", `images/${business.img}`);
+                imgMain.setAttribute("alt", `Logo of ${business.name}`);
+
+                div.append(sectionMain);
+                sectionMain.append(div1Main);
+                sectionMain.append(div2Main);
+                div1Main.append(h2Main);
+                div1Main.append(h3main);
+                div1Main.append(imgMain);
+                div1Main.append(p1Main);
+                div2Main.append(p2Main);
+                div2Main.append(p3Main);
+
+                if (index === 2){
+                    sectionMain.classList.add("hide-spotlight");
+                }
+            }
+            )
+            function setMembershipColor() {
+                switch (business.membership) {
+                    case "np":
+                        return "np";
+                    case "bronze":
+                        return "bronze";
+                    case "silver":
+                        return "silver";
+                    case "gold":
+                        return "gold";
+                }
+            }
+            function getRandomBusinesses(array, count) {
+                const shuffled = array.sort(() => 0.5 - Math.random());
+                return shuffled.slice(0, count);
+              }
     };
 }
 getBusinessData();
