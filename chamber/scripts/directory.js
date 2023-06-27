@@ -95,6 +95,16 @@ function displayBusiness(webpage, business) {
         break;
 
         case "main":
+            const sectionMain = document.createElement("section");
+            const h2Main = document.createElement("h2");
+            const div1Main = document.createElement("div");
+            const imgMain = document.createElement("img");
+            const p1Main = document.createElement("p");
+            const div2Main = document.createElement("div");
+            const p2Main = document.createElement("p");
+            const p3Main = document.createElement("p");
+            const aMain = document.createElement("a");
+
     };
 }
 getBusinessData();
