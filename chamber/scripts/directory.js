@@ -47,6 +47,8 @@ const sortBusinessByMembership = (business) => {
 function setMembershipColor(membership) {
     if (membership == "gold") {return "gold"};
     if (membership == "silver") {return "silver"};
+    if (membership == "bronze") {return "bronze"};
+    if (membership == "np") {return "np"};
 }
 
 function displayBusiness(webpage, business) {
