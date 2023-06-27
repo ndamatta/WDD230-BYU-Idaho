@@ -84,10 +84,10 @@ function displayBusiness(webpage, business) {
                 if (business.membership == "bronze") {
                     return "bronze";
                 }
-                    if (business.membership == "silver") {
+                if (business.membership == "silver") {
                     return "silver";
                 }
-                    if (business.membership == "gold") {
+                if (business.membership == "gold") {
                     return "gold";
                 }
             }
