@@ -522,6 +522,10 @@ form label.top input:required:valid {
 .home-spotlight .gold, .directory-main .gold {color: #FFD700;}
 
 /* CONTACT US */
+.contactus-main {
+    display: grid;
+    grid-template-columns: 1fr;
+}
 .contactus-main  > div {
     background-color: #ADD8E6;
     margin: 1rem;
