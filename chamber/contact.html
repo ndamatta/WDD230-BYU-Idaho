@@ -37,9 +37,22 @@
     </header>
     <main class="contactus-main">
         <h2>We want to hear about you, contact us!</h2>
-        <div class="form">
-            <p>FORM HERE</p>
-        </div>
+        <form method="get" action="thankyou.html">
+            <fieldset>
+                <legend>Get in touch with us</legend>
+                <label class="top">First Name*<input type="text" name="fname" required></label>
+                <label class="top">Last Name*<input type="text" name="lname" required></label>
+                <label class="top">Email*<input type="email" name="email" placeholder="someone@example.com" required></label>
+                <div class="member">
+                    <h3>Are you a member of the Funes Chamber of Commerce?</h3>
+                    <label class="sbs"><input type="radio" name="member" value="yes"> Yes</label>
+                    <label class="sbs"><input type="radio" name="member" value="no"> No</label>
+                    <label class="sbs"><input type="radio" name="member" value="notsure"> I'm not sure</label>
+                </div>
+                <label class="top">What questions do you have for us?<textarea name="description" cols="30" rows="7"></textarea></label>
+            </fieldset>
+            <input type="submit" value="Contact the Chamber" class="submitBtn" name="submitButton2">
+        </form>
         <div class="visitus">
             <h2>Visit us</h2>
             <div class="info">
@@ -47,6 +60,7 @@
                 <p>Juan Elorza 1962, Funes, Santa Fe, Argentina.</p>
                 <p>+(54)9 341 5581012</p>
             </div>
+            <h2>Office Hours</h2>
             <div class="office">
                 <li>Monday - Thursday: 9:30 a.m. to 4:00 p.m</li>
                 <li>Friday - Sunday: Closed</li>
