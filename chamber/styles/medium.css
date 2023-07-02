@@ -248,7 +248,7 @@
         grid-column: 2;
         grid-row: 3;
     }
-    .contactus-main .form {
+    .contactus-main form {
         grid-column: 1;
         grid-row: 2/4;
     }
